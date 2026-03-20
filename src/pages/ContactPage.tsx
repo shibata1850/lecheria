@@ -34,7 +34,7 @@ const CONTACT_METHODS = [
   {
     id: 'form',
     name: 'お問い合わせフォーム',
-    description: '下記フォームよりお気軽にご連絡ください。',
+    description: '下記フォームよりご連絡ください。',
     href: '#form',
     btnLabel: 'フォームへ',
     external: false,

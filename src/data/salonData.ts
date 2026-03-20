@@ -24,12 +24,12 @@ export const SALON = {
 };
 
 export const GALLERY_IMAGES = [
-  { id: 1, src: 'https://images.pexels.com/photos/1838554/pexels-photo-1838554.jpeg?auto=compress&cs=tinysrgb&w=800', alt: 'サロン外観' },
-  { id: 2, src: 'https://images.pexels.com/photos/3861458/pexels-photo-3861458.jpeg?auto=compress&cs=tinysrgb&w=800', alt: '待合スペース' },
-  { id: 3, src: 'https://images.pexels.com/photos/3757942/pexels-photo-3757942.jpeg?auto=compress&cs=tinysrgb&w=800', alt: '施術ルーム' },
-  { id: 4, src: 'https://images.pexels.com/photos/3985329/pexels-photo-3985329.jpeg?auto=compress&cs=tinysrgb&w=800', alt: 'フェイシャル施術' },
-  { id: 5, src: 'https://images.pexels.com/photos/3865557/pexels-photo-3865557.jpeg?auto=compress&cs=tinysrgb&w=800', alt: 'ボディ施術' },
-  { id: 6, src: 'https://images.pexels.com/photos/7578808/pexels-photo-7578808.jpeg?auto=compress&cs=tinysrgb&w=800', alt: '美容機器' },
-  { id: 7, src: 'https://images.pexels.com/photos/3762879/pexels-photo-3762879.jpeg?auto=compress&cs=tinysrgb&w=800', alt: '取扱商品' },
-  { id: 8, src: 'https://images.pexels.com/photos/3985356/pexels-photo-3985356.jpeg?auto=compress&cs=tinysrgb&w=800', alt: 'カウンセリング風景' },
+  { id: 1, src: '/images/salon-1.jpeg', alt: 'サロン外観' },
+  { id: 2, src: '/images/salon-2.jpeg', alt: '待合スペース' },
+  { id: 3, src: '/images/salon-3.jpeg', alt: '施術ルーム' },
+  { id: 4, src: '/images/salon-4.jpeg', alt: 'フェイシャル施術' },
+  { id: 5, src: '/images/salon-5.jpeg', alt: 'ボディ施術' },
+  { id: 6, src: '/images/salon-6.jpeg', alt: '美容機器' },
+  { id: 7, src: '/images/salon-7.jpeg', alt: '取扱商品' },
+  { id: 8, src: '/images/salon-8.jpeg', alt: 'カウンセリング風景' },
 ];

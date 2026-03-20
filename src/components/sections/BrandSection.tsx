@@ -17,10 +17,7 @@ export default function BrandSection() {
               L'Riage.（リアージュ）は、人と人、美しさと人生を結びつけることをコンセプトに生まれたブランドです。
             </p>
             <p className="text-text-main font-sans text-sm leading-loose">
-              美容やウェルネスを中心とした事業を通して、上質な体験と心地よい時間を提供し、人々の日常に小さな贅沢と豊かさを届けることを目指しています。
-            </p>
-            <p className="text-text-main font-sans text-sm leading-loose">
-              私たちは、美しさとは外見だけでなく、空間・時間・体験、そして人とのつながりの中で生まれるものだと考えています。
+              美容やウェルネスを中心とした事業を通して、上質な体験と心地よい時間を提供し、人々の日常に豊かさを届けることを目指しています。
             </p>
             <p className="text-text-main font-sans text-sm leading-loose">
               L'Riage.は、人と人との絆を大切にしながら、人生をより美しく彩る価値を創造していきます。
@@ -33,7 +30,7 @@ export default function BrandSection() {
           <div className="fade-up">
             <div className="aspect-[3/4] overflow-hidden">
               <img
-                src="https://images.pexels.com/photos/3762879/pexels-photo-3762879.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src="/images/index-3.jpeg"
                 alt="L'Riage. 取扱商品"
                 className="w-full h-full object-cover"
                 loading="lazy"

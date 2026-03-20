@@ -18,7 +18,7 @@ export const NEWS_ITEMS: NewsItem[] = [
     id: '2',
     date: '2026.03.01',
     title: 'ご予約受付を開始いたしました',
-    description: 'Hotpepper Beauty・LINE・お問い合わせフォームよりご予約を承っております。',
+    description: 'Hotpepper Beauty・LINE・フォームよりご予約を承っております。',
     slug: 'reservation-start',
   },
   {

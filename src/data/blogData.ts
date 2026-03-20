@@ -18,7 +18,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'お知らせ',
     date: '2026.03.01',
     excerpt: '岩手県北上市のエステサロン ル・シェリアの公式ホームページをオープンいたしました。',
-    image: 'https://images.pexels.com/photos/3757942/pexels-photo-3757942.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: '/images/blog-1-1.jpeg',
     tags: ['お知らせ', '北上市 エステ'],
     content: `岩手県北上市のエステサロン ル・シェリアの公式ホームページをオープンいたしました。
 
@@ -38,7 +38,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'クーポン',
     date: '2026.03.01',
     excerpt: '開業を記念した特別メニューをご用意しました。この機会にぜひご利用ください。',
-    image: 'https://images.pexels.com/photos/3762879/pexels-photo-3762879.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: '/images/blog-2-1.jpeg',
     tags: ['クーポン', 'オープン記念', '北上市 エステ'],
     content: `ル・シェリアのオープンを記念して、特別メニューをご用意しております。
 
@@ -63,7 +63,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'お役立ち情報',
     date: '2026.03.01',
     excerpt: '脱毛施術を安全に、そして効果的に受けていただくために知っておきたいポイントをご紹介します。',
-    image: 'https://images.pexels.com/photos/3865542/pexels-photo-3865542.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: '/images/blog-3-1.jpeg',
     tags: ['お役立ち情報', '脱毛', '北上市 脱毛', '北上市 メンズ脱毛'],
     content: `脱毛施術を受ける前後には、いくつかのポイントに気をつけることで、より安全で効果的なケアにつながります。
 

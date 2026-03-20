@@ -23,8 +23,7 @@ export default function ConceptSection() {
               洗練された空間と心を込めた施術を通して、心と身体を整え、本来の美しさを引き出します。
             </p>
             <p className="text-text-main font-sans text-sm leading-loose mb-10">
-              脱毛・フェイシャル・ボディ・ヘッド・マシンケア・ブライダルなど、幅広いメニューで、
-              お一人おひとりのお悩みに寄り添い、通いやすく相談しやすいサロンを目指しています。
+              脱毛・フェイシャル・ボディ・ヘッド・マシンケア・ブライダルなど、幅広いメニューで、お一人おひとりのお悩みに寄り添います。
             </p>
             <span className="text-silver text-xs tracking-widest font-serif">{SALON.nameEn}</span>
           </div>
@@ -32,14 +31,14 @@ export default function ConceptSection() {
           <div className="fade-up relative">
             <div className="relative">
               <img
-                src="https://images.pexels.com/photos/3757942/pexels-photo-3757942.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src="/images/index-2.jpeg"
                 alt="施術ルーム"
                 className="w-full aspect-[4/5] object-cover shadow-sm"
                 loading="lazy"
               />
               <div className="absolute -bottom-8 -left-8 w-2/3 hidden md:block">
                 <img
-                  src="https://images.pexels.com/photos/3861458/pexels-photo-3861458.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  src="/images/index-16.jpeg"
                   alt="待合スペース"
                   className="w-full aspect-square object-cover shadow-sm border-4 border-white"
                   loading="lazy"

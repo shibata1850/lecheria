@@ -5,22 +5,22 @@ const STEPS = [
   {
     num: '01',
     title: 'ご予約・ご来店',
-    description: 'Hotpepper Beauty・公式LINE・お問い合わせフォームよりご予約ください。当日はリラックスしてご来店を。',
+    description: 'Hotpepper Beauty・公式LINE・フォームよりご予約ください。',
   },
   {
     num: '02',
     title: 'カウンセリング',
-    description: '肌の状態やお悩み、ご希望をていねいにお伺いします。初めての方もご安心ください。',
+    description: '肌の状態やお悩みをていねいにお伺いします。',
   },
   {
     num: '03',
     title: '施術',
-    description: '落ち着いた個室でおくつろぎいただきながら、丁寧な施術をお届けします。',
+    description: '落ち着いた個室で丁寧な施術をお届けします。',
   },
   {
     num: '04',
     title: 'アフターカウンセリング',
-    description: '施術後のホームケアアドバイスや次回プランをご案内します。気になる点もお気軽にご相談ください。',
+    description: 'ホームケアアドバイスや次回プランをご案内します。',
   },
 ];
 
@@ -55,7 +55,7 @@ export default function FlowSection() {
         </div>
 
         <p className="text-mid-gray text-xs font-sans text-center mt-12 fade-up">
-          ※カウンセリングのみのご来店も歓迎です。お気軽にお問い合わせください。
+          ※カウンセリングのみのご来店も歓迎です。
         </p>
       </div>
     </section>
