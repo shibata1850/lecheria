@@ -12,11 +12,11 @@ export default function GallerySection() {
           <SectionHeader label="GALLERY" title="ギャラリー" />
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
           {GALLERY_IMAGES.map((img, index) => (
             <div
               key={img.id}
-              className="fade-up overflow-hidden aspect-square"
+              className="fade-up overflow-hidden aspect-square shadow-[0_4px_20px_rgba(0,0,0,0.10)] hover:shadow-[0_10px_36px_rgba(0,0,0,0.18)] transition-shadow duration-300"
               style={{ transitionDelay: `${index * 60}ms` }}
             >
               <img

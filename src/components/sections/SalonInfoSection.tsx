@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 import SectionHeader from '../ui/SectionHeader';
-import { SALON, GALLERY_IMAGES } from '../../data/salonData';
+import { SALON } from '../../data/salonData';
 
 const INFO_ROWS = [
   { label: 'サロン名', value: SALON.name },
@@ -52,17 +52,17 @@ export default function SalonInfoSection() {
           </div>
 
           <div className="fade-up">
-            <div className="grid grid-cols-2 gap-3">
-              {GALLERY_IMAGES.slice(0, 4).map((img) => (
-                <div key={img.id} className="overflow-hidden aspect-square">
-                  <img
-                    src={img.src}
-                    alt={img.alt}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                  />
-                </div>
-              ))}
+            <div className="w-full h-64 md:h-80 shadow-[0_4px_24px_rgba(0,0,0,0.12)]">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3112.3!2d141.1134!3d39.2988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f7b7c9f1b0e0001%3A0x0!2z5bKB5omA55yM5YyX5LiK5biC44GV44GP44KJ5YCp44KK3LQgM-S4geeVqjE3LTMz!5e0!3m2!1sja!2sjp!4v1700000000000!5m2!1sja!2sjp"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="ル・シェリア 地図"
+              />
             </div>
           </div>
         </div>
