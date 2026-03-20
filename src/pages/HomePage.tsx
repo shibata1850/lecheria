@@ -1,7 +1,6 @@
 import HeroSection from '../components/sections/HeroSection';
 import ConceptSection from '../components/sections/ConceptSection';
 import BrandSection from '../components/sections/BrandSection';
-import MessageSection from '../components/sections/MessageSection';
 import NewsSection from '../components/sections/NewsSection';
 import CampaignSection from '../components/sections/CampaignSection';
 import MenuSection from '../components/sections/MenuSection';
@@ -18,7 +17,6 @@ export default function HomePage() {
       <HeroSection />
       <ConceptSection />
       <BrandSection />
-      <MessageSection />
       <NewsSection />
       <CampaignSection />
       <MenuSection />

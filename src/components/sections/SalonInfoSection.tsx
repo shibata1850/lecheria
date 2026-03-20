@@ -38,7 +38,7 @@ export default function SalonInfoSection() {
 
             <div className="mt-8 flex flex-wrap gap-4">
               <Link to="/salon" className="btn-outline">
-                サロン情報を見る
+                詳しくはこちら
               </Link>
               <a
                 href={SALON.googleMapUrl}

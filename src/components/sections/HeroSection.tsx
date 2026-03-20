@@ -17,8 +17,8 @@ export default function HeroSection() {
     <section className="relative min-h-screen flex flex-col overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1540555700478-4be289fbec6b?w=1920&q=80"
-          alt="ル・シェリア サロン内観"
+          src="https://images.pexels.com/photos/7755158/pexels-photo-7755158.jpeg?auto=compress&cs=tinysrgb&w=1920"
+          alt="メンズエステ施術"
           className="w-full h-full object-cover object-center"
           loading="eager"
           style={{
@@ -36,8 +36,8 @@ export default function HeroSection() {
             className="fade-up w-full max-w-7xl mx-auto px-6 md:px-10 pt-32 pb-12 md:pt-0 md:pb-0 md:pl-16 lg:pl-24"
           >
             <img
-              src="/logo.svg"
-              alt="Le'Cherien ロゴ"
+              src="/image.png"
+              alt="Le Cherien ロゴ"
               className="w-40 md:w-52 mb-8 md:mb-10 opacity-90"
             />
 

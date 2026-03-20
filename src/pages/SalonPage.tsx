@@ -65,7 +65,7 @@ export default function SalonPage() {
             <SectionHeader label="PARKING" title="駐車場のご案内" align="left" />
             <div className="flex justify-center">
               <img
-                src="/images/parking-map.svg"
+                src="/image.png"
                 alt="駐車場マップ - 1〜4番がル・シェリア専用駐車場です"
                 className="w-full max-w-lg"
                 loading="lazy"
