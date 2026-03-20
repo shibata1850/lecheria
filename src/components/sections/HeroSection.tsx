@@ -17,11 +17,10 @@ export default function HeroSection() {
     <section className="relative min-h-screen flex flex-col overflow-hidden">
       <div className="absolute inset-0 z-0 overflow-hidden">
         <img
-          src="https://images.pexels.com/photos/7562313/pexels-photo-7562313.jpeg?auto=compress&cs=tinysrgb&w=1920"
-          alt="メンズエステ施術"
+          src="/images/ヒーロー画像.jpg"
+          alt="エステ施術"
           className="ken-burns w-full h-full object-cover object-center"
           loading="eager"
-          style={{ filter: 'brightness(1.05) saturate(0.85)' }}
         />
         <div className="absolute inset-0 bg-white/40" />
         <div className="absolute inset-0 bg-gradient-to-r from-white/60 via-white/30 to-transparent" />
