@@ -1,3 +1,4 @@
+import type { RefObject } from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import SectionHeader from '../components/ui/SectionHeader';
 import ContactSection from '../components/sections/ContactSection';
@@ -15,7 +16,7 @@ export default function AboutLriagePage() {
         </div>
       </section>
 
-      <section ref={ref as React.RefObject<HTMLElement>} className="bg-white py-24 md:py-32">
+      <section ref={ref as RefObject<HTMLElement>} className="bg-white py-24 md:py-32">
         <div className="max-w-7xl mx-auto px-6 md:px-10">
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center mb-24 md:mb-32">

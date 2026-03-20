@@ -25,7 +25,7 @@
   }
 
   .card-hover {
-    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-sm;
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-md;
   }
 
   .fade-up {
@@ -34,6 +34,14 @@
 
   .fade-up.visible {
     @apply opacity-100 translate-y-0;
+  }
+
+  .img-shadow {
+    @apply shadow-[0_8px_32px_rgba(0,0,0,0.18)] transition-shadow duration-300;
+  }
+
+  .img-shadow:hover {
+    @apply shadow-[0_16px_48px_rgba(0,0,0,0.25)];
   }
 }
 
@@ -48,4 +56,15 @@ body {
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes kenBurns {
+  0% { transform: scale(1) translateX(0) translateY(0); }
+  33% { transform: scale(1.07) translateX(-1.5%) translateY(-0.5%); }
+  66% { transform: scale(1.04) translateX(1%) translateY(-1%); }
+  100% { transform: scale(1) translateX(0) translateY(0); }
+}
+
+.ken-burns {
+  animation: kenBurns 16s ease-in-out infinite;
 }

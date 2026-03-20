@@ -15,18 +15,18 @@ export default function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex flex-col overflow-hidden">
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 overflow-hidden">
         <img
-          src="https://images.pexels.com/photos/7755158/pexels-photo-7755158.jpeg?auto=compress&cs=tinysrgb&w=1920"
-          alt="メンズエステ施術"
-          className="w-full h-full object-cover object-center"
+          src="https://images.pexels.com/photos/3997993/pexels-photo-3997993.jpeg?auto=compress&cs=tinysrgb&w=1920"
+          alt="エステ施術"
+          className="ken-burns w-full h-full object-cover object-center"
           loading="eager"
           style={{
-            filter: 'grayscale(20%) brightness(0.62) contrast(1.15) saturate(0.55)',
+            filter: 'brightness(0.58) contrast(1.1) saturate(0.7)',
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-charcoal/60 via-charcoal/35 to-charcoal/15" />
-        <div className="absolute inset-0 bg-gradient-to-t from-charcoal/50 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-charcoal/65 via-charcoal/35 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-charcoal/55 via-transparent to-transparent" />
       </div>
 
       <div className="relative z-10 flex flex-col min-h-screen">
@@ -36,9 +36,10 @@ export default function HeroSection() {
             className="fade-up w-full max-w-7xl mx-auto px-6 md:px-10 pt-32 pb-12 md:pt-0 md:pb-0 md:pl-16 lg:pl-24"
           >
             <img
-              src="/image.png"
+              src="/S__18882590.jpg"
               alt="Le Cherien ロゴ"
-              className="w-40 md:w-52 mb-8 md:mb-10 opacity-90"
+              className="w-36 md:w-48 mb-8 md:mb-10"
+              style={{ filter: 'invert(1) brightness(1) opacity(0.92)' }}
             />
 
             <span className="block text-silver/70 text-xs tracking-widest2 font-sans mb-3">
@@ -56,7 +57,7 @@ export default function HeroSection() {
               {SALON.tagline}
             </h1>
 
-            <div className="w-8 h-px bg-gold-light mb-8" />
+            <div className="w-8 h-px bg-gold mb-8" />
 
             <p className="text-white/65 text-sm font-sans leading-loose mb-10 max-w-xs md:max-w-sm tracking-wide">
               {SALON.subtagline}

@@ -22,12 +22,11 @@ export default function PriceTable({ items, memberOnly }: PriceTableProps) {
   return (
     <div>
       <div className="border border-border overflow-x-auto">
-        <table className="w-full min-w-[400px]">
+        <table className="w-full min-w-[320px]">
           <thead>
             <tr className="bg-soft-gray border-b border-border">
               <th className="text-left text-xs text-mid-gray font-sans font-normal tracking-wider px-5 py-3">施術名</th>
-              <th className="text-center text-xs text-mid-gray font-sans font-normal tracking-wider px-3 py-3 w-20">時間</th>
-              <th className="text-right text-xs text-charcoal font-sans font-medium tracking-wider px-5 py-3 w-32 bg-amber-50">
+              <th className="text-right text-xs text-charcoal font-sans font-medium tracking-wider px-5 py-3 w-36 bg-amber-50">
                 {memberOnly ? '会員価格' : 'お試し価格'}
               </th>
             </tr>
@@ -36,8 +35,7 @@ export default function PriceTable({ items, memberOnly }: PriceTableProps) {
             {mainItems.map((item, i) => (
               <tr key={i} className={i < mainItems.length - 1 ? 'border-b border-border' : ''}>
                 <td className="text-charcoal text-sm font-sans px-5 py-4">{item.name}</td>
-                <td className="text-center text-mid-gray text-xs font-sans px-3 py-4">{item.duration || '-'}</td>
-                <td className="text-right text-charcoal text-sm font-serif font-medium px-5 py-4 bg-amber-50/50">
+                <td className="text-right text-charcoal text-sm font-serif font-medium px-5 py-4 w-36 bg-amber-50/50">
                   {renderPriceCell(item)}
                 </td>
               </tr>
@@ -50,13 +48,12 @@ export default function PriceTable({ items, memberOnly }: PriceTableProps) {
         <div className="mt-6">
           <p className="text-mid-gray text-xs font-sans tracking-wider mb-3">Option</p>
           <div className="border border-border overflow-x-auto">
-            <table className="w-full min-w-[400px]">
+            <table className="w-full min-w-[320px]">
               <tbody>
                 {optionItems.map((item, i) => (
                   <tr key={i} className={i < optionItems.length - 1 ? 'border-b border-border' : ''}>
                     <td className="text-charcoal text-sm font-sans px-5 py-3">{item.name}</td>
-                    <td className="text-center text-mid-gray text-xs font-sans px-3 py-3 w-20">{item.duration || '-'}</td>
-                    <td className="text-right text-charcoal text-sm font-serif font-medium px-5 py-3 w-32 bg-amber-50/50">
+                    <td className="text-right text-charcoal text-sm font-serif font-medium px-5 py-3 w-36 bg-amber-50/50">
                       {renderPriceCell(item)}
                     </td>
                   </tr>

@@ -6,22 +6,22 @@ const REASONS = [
     num: '01',
     title: '上質な空間',
     description: '完全個室のプライベート空間で、周囲を気にせずゆったりとお過ごしいただけます。遠赤外線ドームも完備し、心身を温めながら施術効果を高めます。',
-    image: 'https://images.unsplash.com/photo-1540555700478-4be289fbec6b?w=800&q=80',
+    image: '/images/IMG_7994.JPG',
     imageAlt: '完全個室の施術ルーム',
   },
   {
     num: '02',
     title: 'カウンセリング重視',
     description: 'お悩みや理想に寄り添う丁寧なカウンセリングで、一人ひとりに合わせた的確なアドバイスをご提供。結果を重視したご提案を行います。',
-    image: 'https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=800&q=80',
-    imageAlt: 'カウンセリング風景',
+    image: '/images/IMG_7969.JPG',
+    imageAlt: 'カウンセリング・受付スペース',
   },
   {
     num: '03',
     title: '熟練ハンド技術×美容機器',
     description: 'キャリアある経験豊富なスタッフが、ハンド技術と先進美容機器を組み合わせて最適な施術をご提供します。',
-    image: 'https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=800&q=80',
-    imageAlt: '美容機器による施術',
+    image: '/images/IMG_7983.JPG',
+    imageAlt: '施術ルームと美容機器',
   },
 ];
 
@@ -39,14 +39,14 @@ export default function ReasonSection() {
           {REASONS.map((reason, index) => (
             <div
               key={reason.num}
-              className="fade-up bg-white shadow-sm card-hover"
+              className="fade-up bg-white shadow-[0_4px_24px_rgba(0,0,0,0.12)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.18)] transition-shadow duration-300 card-hover"
               style={{ transitionDelay: `${index * 80}ms` }}
             >
               <div className="aspect-[4/3] overflow-hidden">
                 <img
                   src={reason.image}
                   alt={reason.imageAlt}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                   loading="lazy"
                 />
               </div>

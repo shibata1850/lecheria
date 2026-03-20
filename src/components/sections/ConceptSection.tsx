@@ -29,18 +29,18 @@ export default function ConceptSection() {
           </div>
 
           <div className="fade-up relative">
-            <div className="relative">
+            <div className="relative pb-16 md:pb-0">
               <img
-                src="https://images.unsplash.com/photo-1540555700478-4be289fbec6b?w=800&q=80"
-                alt="施術ルーム"
-                className="w-full aspect-[4/5] object-cover shadow-sm"
+                src="/images/IMG_7955.JPG"
+                alt="ル・シェリア 店内"
+                className="w-full aspect-[4/5] object-cover img-shadow"
                 loading="lazy"
               />
               <div className="absolute -bottom-8 -left-8 w-2/3 hidden md:block">
                 <img
-                  src="/images/index-16.jpeg"
-                  alt="待合スペース"
-                  className="w-full aspect-square object-cover shadow-sm border-4 border-white"
+                  src="/images/IMG_7940.JPG"
+                  alt="ル・シェリア 外観"
+                  className="w-full aspect-square object-cover img-shadow border-4 border-white"
                   loading="lazy"
                 />
               </div>
