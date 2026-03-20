@@ -30,5 +30,4 @@ export const GALLERY_IMAGES = [
   { id: 3, src: '/images/IMG_7983.JPG', alt: '施術ルーム' },
   { id: 4, src: '/images/IMG_7994.JPG', alt: 'パウダールーム' },
   { id: 5, src: '/images/IMG_7940.JPG', alt: 'サロン外観' },
-  { id: 6, src: '/images/S__18882569.jpg', alt: '待合・受付カウンター' },
 ];
