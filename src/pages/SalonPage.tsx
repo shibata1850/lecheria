@@ -5,8 +5,7 @@ import ContactSection from '../components/sections/ContactSection';
 import { SALON } from '../data/salonData';
 
 const INFO_ROWS = [
-  { label: 'サロン名', value: SALON.name },
-  { label: '英名', value: SALON.nameEn },
+  { label: 'サロン名', value: `${SALON.name}（${SALON.nameEn}）` },
   { label: '住所', value: `${SALON.addressLine2} ${SALON.addressLine1}` },
   { label: 'TEL', value: SALON.tel },
   { label: '営業時間', value: `${SALON.hours}${SALON.hoursNote}` },
@@ -60,6 +59,19 @@ export default function SalonPage() {
               </div>
             </div>
             <p className="text-mid-gray text-xs font-sans mt-3">{SALON.access}</p>
+          </div>
+
+          <div className="fade-up mb-16">
+            <SectionHeader label="PARKING" title="駐車場のご案内" align="left" />
+            <div className="flex justify-center">
+              <img
+                src="/images/parking-map.svg"
+                alt="駐車場マップ - 1〜4番がル・シェリア専用駐車場です"
+                className="w-full max-w-lg"
+                loading="lazy"
+              />
+            </div>
+            <p className="text-mid-gray text-xs font-sans mt-3">※1〜4番がル・シェリア専用駐車場です。</p>
           </div>
 
           <div className="fade-up">

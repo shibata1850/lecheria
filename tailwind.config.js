@@ -4,12 +4,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        'soft-gray': '#F6F6F6',
+        'soft-gray': '#F8F7F5',
         silver: '#C7CBD1',
         'mid-gray': '#8B9097',
-        charcoal: '#3B3E42',
-        'text-main': '#4A4A4A',
-        border: '#E5E7EB',
+        charcoal: '#2E2E2E',
+        'text-main': '#3A3A3A',
+        border: '#E8E6E3',
+        gold: '#B8965A',
+        'gold-light': '#D4B87C',
       },
       fontFamily: {
         serif: ['"Cormorant Garamond"', '"Noto Serif JP"', 'Georgia', 'serif'],

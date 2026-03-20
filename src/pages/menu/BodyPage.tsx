@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 import SectionHeader from '../../components/ui/SectionHeader';
+import PriceTable from '../../components/ui/PriceTable';
 import ContactSection from '../../components/sections/ContactSection';
 import { MENU_CATEGORIES } from '../../data/menuData';
 
@@ -57,18 +58,7 @@ export default function BodyPage() {
 
           <div className="fade-up mb-16">
             <SectionHeader label="PRICE" title="料金表" align="left" />
-            <div className="border border-border">
-              {cat.items.map((item, i) => (
-                <div key={i} className={`flex justify-between items-center px-6 py-4 ${i < cat.items.length - 1 ? 'border-b border-border' : ''}`}>
-                  <div>
-                    <span className="text-charcoal text-sm font-sans">{item.name}</span>
-                    {item.duration && <span className="text-mid-gray text-xs font-sans ml-3">{item.duration}</span>}
-                  </div>
-                  <span className="font-serif text-charcoal text-sm">{item.price}</span>
-                </div>
-              ))}
-            </div>
-            <p className="text-mid-gray text-xs font-sans mt-3">※価格は税込表示です。</p>
+            <PriceTable items={cat.items} />
           </div>
 
           <div className="fade-up mb-16">
@@ -88,7 +78,7 @@ export default function BodyPage() {
             <ul className="space-y-3">
               {cat.features.map((item, i) => (
                 <li key={i} className="flex items-center gap-4">
-                  <span className="font-serif text-silver text-sm tracking-widest shrink-0">0{i + 1}</span>
+                  <span className="font-serif text-gold text-sm tracking-widest shrink-0">0{i + 1}</span>
                   <span className="text-text-main text-sm font-sans">{item}</span>
                 </li>
               ))}
@@ -100,7 +90,7 @@ export default function BodyPage() {
             <ol className="space-y-6">
               {['ご予約', 'カウンセリング・体調確認', '施術', 'アフターケアアドバイス'].map((step, i) => (
                 <li key={i} className="flex gap-4 items-start">
-                  <span className="w-8 h-8 rounded-full bg-charcoal text-white text-xs font-serif flex items-center justify-center shrink-0">
+                  <span className="w-8 h-8 rounded-full bg-gold text-white text-xs font-serif flex items-center justify-center shrink-0">
                     {String(i + 1).padStart(2, '0')}
                   </span>
                   <span className="text-text-main text-sm font-sans pt-1.5">{step}</span>

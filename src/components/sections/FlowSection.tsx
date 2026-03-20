@@ -44,7 +44,7 @@ export default function FlowSection() {
                 className="fade-up flex flex-col items-center text-center"
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
-                <div className="w-16 h-16 rounded-full bg-charcoal text-white flex items-center justify-center mb-6 shrink-0">
+                <div className="w-16 h-16 rounded-full bg-gold text-white flex items-center justify-center mb-6 shrink-0">
                   <span className="font-serif text-sm tracking-widest">{step.num}</span>
                 </div>
                 <h3 className="font-serif text-base text-charcoal font-light mb-3">{step.title}</h3>

@@ -104,7 +104,7 @@ export default function Footer() {
                 href={SALON.hotpepperUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block border border-white/35 text-white/80 text-xs tracking-widest px-6 py-2.5 hover:bg-white hover:text-charcoal transition-all duration-300"
+                className="inline-block border border-gold text-gold text-xs tracking-widest px-6 py-2.5 hover:bg-gold hover:text-white transition-all duration-300"
               >
                 RESERVE
               </a>

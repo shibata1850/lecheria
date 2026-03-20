@@ -25,13 +25,13 @@ export default function ConceptSection() {
             <p className="text-text-main font-sans text-sm leading-loose mb-10">
               脱毛・フェイシャル・ボディ・ヘッド・マシンケア・ブライダルなど、幅広いメニューで、お一人おひとりのお悩みに寄り添います。
             </p>
-            <span className="text-silver text-xs tracking-widest font-serif">{SALON.nameEn}</span>
+            <span className="text-gold text-xs tracking-widest font-serif">{SALON.nameEn}</span>
           </div>
 
           <div className="fade-up relative">
             <div className="relative">
               <img
-                src="/images/index-2.jpeg"
+                src="https://images.unsplash.com/photo-1540555700478-4be289fbec6b?w=800&q=80"
                 alt="施術ルーム"
                 className="w-full aspect-[4/5] object-cover shadow-sm"
                 loading="lazy"

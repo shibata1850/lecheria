@@ -30,7 +30,7 @@ export default function BrandSection() {
           <div className="fade-up">
             <div className="aspect-[3/4] overflow-hidden">
               <img
-                src="/images/index-3.jpeg"
+                src="https://images.unsplash.com/photo-1622866027662-14e3c5ee67e7?w=800&q=80"
                 alt="L'Riage. 取扱商品"
                 className="w-full h-full object-cover"
                 loading="lazy"

@@ -5,7 +5,7 @@
 
 @layer components {
   .section-label {
-    @apply text-xs tracking-widest uppercase font-serif text-mid-gray;
+    @apply text-xs tracking-widest uppercase font-serif text-gold;
   }
 
   .section-title {
@@ -13,15 +13,15 @@
   }
 
   .btn-primary {
-    @apply inline-block border border-charcoal text-charcoal text-xs tracking-widest px-8 py-3 transition-all duration-300 hover:bg-charcoal hover:text-white;
+    @apply inline-block bg-gold text-white text-xs tracking-widest px-8 py-3 font-sans transition-all duration-300 hover:bg-gold-light;
   }
 
   .btn-secondary {
-    @apply inline-block border border-white text-white text-xs tracking-widest px-8 py-3 transition-all duration-300 hover:bg-white hover:text-charcoal;
+    @apply inline-block border border-gold-light text-white text-xs tracking-widest px-8 py-3 font-sans transition-all duration-300 hover:bg-gold hover:border-gold;
   }
 
   .btn-outline {
-    @apply inline-block border border-border text-text-main text-xs tracking-widest px-8 py-3 transition-all duration-300 hover:border-charcoal hover:bg-charcoal hover:text-white;
+    @apply inline-block border border-border text-text-main text-xs tracking-widest px-8 py-3 font-sans transition-all duration-300 hover:border-gold hover:bg-gold hover:text-white;
   }
 
   .card-hover {

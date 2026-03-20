@@ -17,7 +17,7 @@ export default function HeroSection() {
     <section className="relative min-h-screen flex flex-col overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img
-          src="/hero.jpg"
+          src="https://images.unsplash.com/photo-1540555700478-4be289fbec6b?w=1920&q=80"
           alt="ル・シェリア サロン内観"
           className="w-full h-full object-cover object-center"
           loading="eager"
@@ -35,6 +35,12 @@ export default function HeroSection() {
             ref={textRef}
             className="fade-up w-full max-w-7xl mx-auto px-6 md:px-10 pt-32 pb-12 md:pt-0 md:pb-0 md:pl-16 lg:pl-24"
           >
+            <img
+              src="/logo.svg"
+              alt="Le'Cherien ロゴ"
+              className="w-40 md:w-52 mb-8 md:mb-10 opacity-90"
+            />
+
             <span className="block text-silver/70 text-xs tracking-widest2 font-sans mb-3">
               {SALON.taglineSmall}
             </span>
@@ -50,7 +56,7 @@ export default function HeroSection() {
               {SALON.tagline}
             </h1>
 
-            <div className="w-8 h-px bg-silver/40 mb-8" />
+            <div className="w-8 h-px bg-gold-light mb-8" />
 
             <p className="text-white/65 text-sm font-sans leading-loose mb-10 max-w-xs md:max-w-sm tracking-wide">
               {SALON.subtagline}

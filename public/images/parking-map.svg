@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" fill="none">
+  <style>
+    text { font-family: 'Noto Sans JP', sans-serif; }
+  </style>
+
+  <!-- Background -->
+  <rect width="600" height="400" fill="#F8F7F5" rx="4"/>
+
+  <!-- Road (horizontal) -->
+  <rect x="0" y="240" width="600" height="60" fill="#E8E6E3"/>
+  <text x="300" y="275" text-anchor="middle" fill="#8B9097" font-size="12" letter-spacing="2">道 路</text>
+
+  <!-- Building (salon) -->
+  <rect x="200" y="100" width="200" height="120" fill="#2E2E2E" rx="3"/>
+  <text x="300" y="155" text-anchor="middle" fill="white" font-size="14" font-weight="500">ル・シェリア</text>
+  <text x="300" y="175" text-anchor="middle" fill="#B8965A" font-size="10" letter-spacing="2">Le Cherien</text>
+
+  <!-- Parking spaces -->
+  <!-- Spot 1 -->
+  <rect x="120" y="310" width="70" height="50" fill="white" stroke="#B8965A" stroke-width="2" rx="2"/>
+  <text x="155" y="340" text-anchor="middle" fill="#B8965A" font-size="18" font-weight="600">1</text>
+
+  <!-- Spot 2 -->
+  <rect x="200" y="310" width="70" height="50" fill="white" stroke="#B8965A" stroke-width="2" rx="2"/>
+  <text x="235" y="340" text-anchor="middle" fill="#B8965A" font-size="18" font-weight="600">2</text>
+
+  <!-- Spot 3 -->
+  <rect x="280" y="310" width="70" height="50" fill="white" stroke="#B8965A" stroke-width="2" rx="2"/>
+  <text x="315" y="340" text-anchor="middle" fill="#B8965A" font-size="18" font-weight="600">3</text>
+
+  <!-- Spot 4 -->
+  <rect x="360" y="310" width="70" height="50" fill="white" stroke="#B8965A" stroke-width="2" rx="2"/>
+  <text x="395" y="340" text-anchor="middle" fill="#B8965A" font-size="18" font-weight="600">4</text>
+
+  <!-- Arrow from road to parking -->
+  <line x1="300" y1="300" x2="300" y2="308" stroke="#8B9097" stroke-width="1.5"/>
+  <polygon points="296,308 300,314 304,308" fill="#8B9097"/>
+
+  <!-- Label -->
+  <text x="260" y="380" fill="#8B9097" font-size="11">※ 1〜4番が専用駐車場です</text>
+
+  <!-- P icon -->
+  <circle cx="80" cy="335" r="18" fill="#B8965A"/>
+  <text x="80" y="342" text-anchor="middle" fill="white" font-size="20" font-weight="700">P</text>
+
+  <!-- Entrance arrow -->
+  <text x="460" y="335" fill="#8B9097" font-size="10">入口 →</text>
+  <line x1="500" y1="310" x2="500" y2="220" stroke="#8B9097" stroke-width="1" stroke-dasharray="4"/>
+</svg>

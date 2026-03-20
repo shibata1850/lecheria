@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 350" fill="none">
+  <!-- Butterfly wing left -->
+  <path d="M165 60 C120 20, 40 30, 60 100 C75 150, 120 170, 170 155 C140 140, 100 120, 95 80 C92 55, 130 45, 165 60Z" stroke="white" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+  <!-- Butterfly wing right -->
+  <path d="M195 65 C230 15, 320 20, 310 90 C305 130, 270 155, 220 150 C250 135, 285 115, 290 80 C293 55, 240 40, 195 65Z" stroke="white" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+  <!-- Butterfly body -->
+  <path d="M180 150 C185 130, 185 100, 180 70" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- Butterfly antenna left -->
+  <path d="M175 70 C160 45, 145 35, 135 30" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- Butterfly antenna right -->
+  <path d="M185 68 C195 48, 205 40, 215 38" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- Tail curves -->
+  <path d="M180 150 C190 165, 210 175, 240 170 C260 167, 275 158, 285 145" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M240 170 C255 175, 270 172, 280 165" stroke="white" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <!-- Le'Cherien text -->
+  <text x="200" y="240" text-anchor="middle" font-family="'Cormorant Garamond', 'Georgia', serif" font-size="48" font-weight="300" font-style="italic" fill="white" letter-spacing="2">Le' Cherien</text>
+</svg>

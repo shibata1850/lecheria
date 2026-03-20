@@ -11,7 +11,7 @@ export default function SectionHeader({ label, title, subtitle, align = 'center'
   const titleColor = light ? 'text-white' : 'text-charcoal';
   const labelColor = light ? 'text-white/60' : 'text-mid-gray';
   const subtitleColor = light ? 'text-white/70' : 'text-mid-gray';
-  const dividerColor = light ? 'bg-white/30' : 'bg-silver';
+  const dividerColor = light ? 'bg-gold-light' : 'bg-gold';
 
   return (
     <div className={`flex flex-col gap-4 mb-12 md:mb-16 ${alignClass}`}>
