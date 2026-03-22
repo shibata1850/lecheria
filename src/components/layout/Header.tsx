@@ -68,7 +68,7 @@ export default function Header() {
               rel="noopener noreferrer"
               className={`hidden md:inline-block border text-xs tracking-widest px-5 py-2.5 transition-all duration-300 ${
                 scrolled || menuOpen
-                  ? 'border-charcoal text-charcoal hover:bg-charcoal hover:text-white'
+                  ? 'border-gold text-gold hover:bg-gold hover:text-white'
                   : 'border-white text-white hover:bg-white hover:text-charcoal'
               }`}
             >
@@ -118,7 +118,7 @@ export default function Header() {
               >
                 <Link
                   to={item.href}
-                  className="font-serif text-2xl md:text-4xl font-light text-white tracking-widest hover:text-silver transition-colors duration-200"
+                  className="font-serif text-2xl md:text-4xl font-light text-white tracking-widest hover:text-gold-light transition-colors duration-200"
                 >
                   {item.label}
                 </Link>
@@ -131,7 +131,7 @@ export default function Header() {
               href={SALON.hotpepperUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block border border-white text-white text-xs tracking-widest px-8 py-3 hover:bg-white hover:text-charcoal transition-all duration-300"
+              className="inline-block border border-gold text-gold text-xs tracking-widest px-8 py-3 hover:bg-gold hover:text-white transition-all duration-300"
             >
               RESERVE
             </a>

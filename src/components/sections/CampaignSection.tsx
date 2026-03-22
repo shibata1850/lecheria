@@ -29,11 +29,11 @@ export default function CampaignSection() {
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-charcoal/20 group-hover:bg-charcoal/30 transition-all duration-300" />
-                  <span className="absolute top-4 left-4 bg-charcoal text-white text-xs tracking-widest px-3 py-1 font-sans">
+                  <span className="absolute top-4 left-4 bg-gold text-white text-xs tracking-widest px-3 py-1 font-sans">
                     {item.label}
                   </span>
                   <div className="absolute bottom-4 left-4 right-4">
-                    <span className="text-white font-serif text-xl font-light">{item.price}</span>
+                    <span className="text-gold-light font-serif text-xl font-light">{item.price}</span>
                     <span className="text-white/60 text-xs font-sans ml-1">〜（税込）</span>
                   </div>
                 </div>

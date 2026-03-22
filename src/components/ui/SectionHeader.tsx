@@ -9,7 +9,7 @@ interface SectionHeaderProps {
 export default function SectionHeader({ label, title, subtitle, align = 'center', light = false }: SectionHeaderProps) {
   const alignClass = align === 'left' ? 'items-start text-left' : 'items-center text-center';
   const titleColor = light ? 'text-white' : 'text-charcoal';
-  const labelColor = light ? 'text-white/60' : 'text-mid-gray';
+  const labelColor = light ? 'text-gold-light' : 'text-gold';
   const subtitleColor = light ? 'text-white/70' : 'text-mid-gray';
   const dividerColor = light ? 'bg-gold-light' : 'bg-gold';
 

@@ -38,14 +38,14 @@ export default function Footer() {
           </div>
 
           <div className="md:col-span-1">
-            <p className="section-label text-white/35 mb-6">NAVIGATION</p>
+            <p className="section-label text-gold-light mb-6">NAVIGATION</p>
             <div className="grid grid-cols-2 gap-x-8 gap-y-3">
               <div className="space-y-3">
                 {NAV_COL1.map((item) => (
                   <div key={item.label}>
                     <Link
                       to={item.href}
-                      className="text-white/60 text-xs font-serif tracking-widest hover:text-white transition-colors duration-200"
+                      className="text-white/60 text-xs font-serif tracking-widest hover:text-gold-light transition-colors duration-200"
                     >
                       {item.label}
                     </Link>
@@ -57,7 +57,7 @@ export default function Footer() {
                   <div key={item.label}>
                     <Link
                       to={item.href}
-                      className="text-white/60 text-xs font-serif tracking-widest hover:text-white transition-colors duration-200"
+                      className="text-white/60 text-xs font-serif tracking-widest hover:text-gold-light transition-colors duration-200"
                     >
                       {item.label}
                     </Link>
@@ -68,33 +68,33 @@ export default function Footer() {
           </div>
 
           <div className="md:col-span-1">
-            <p className="section-label text-white/35 mb-6">FOLLOW US</p>
+            <p className="section-label text-gold-light mb-6">FOLLOW US</p>
             <div className="space-y-4">
               <a
                 href={SALON.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 text-white/60 text-xs font-sans tracking-widest hover:text-white transition-colors duration-200"
+                className="flex items-center gap-3 text-white/60 text-xs font-sans tracking-widest hover:text-gold-light transition-colors duration-200"
               >
-                <span className="w-8 h-px bg-white/25" />
+                <span className="w-8 h-px bg-gold/50" />
                 INSTAGRAM
               </a>
               <a
                 href={SALON.lineUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 text-white/60 text-xs font-sans tracking-widest hover:text-white transition-colors duration-200"
+                className="flex items-center gap-3 text-white/60 text-xs font-sans tracking-widest hover:text-gold-light transition-colors duration-200"
               >
-                <span className="w-8 h-px bg-white/25" />
+                <span className="w-8 h-px bg-gold/50" />
                 LINE
               </a>
               <a
                 href={SALON.hotpepperUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 text-white/60 text-xs font-sans tracking-widest hover:text-white transition-colors duration-200"
+                className="flex items-center gap-3 text-white/60 text-xs font-sans tracking-widest hover:text-gold-light transition-colors duration-200"
               >
-                <span className="w-8 h-px bg-white/25" />
+                <span className="w-8 h-px bg-gold/50" />
                 HOTPEPPER BEAUTY
               </a>
             </div>

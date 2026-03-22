@@ -6,10 +6,20 @@
 @layer components {
   .section-label {
     @apply text-xs tracking-widest uppercase font-serif text-gold;
+    letter-spacing: 0.25em;
   }
 
   .section-title {
-    @apply text-2xl md:text-3xl font-serif font-light text-charcoal leading-relaxed;
+    @apply text-2xl md:text-3xl font-serif font-light leading-relaxed;
+    color: #2E2E2E;
+  }
+
+  .gold-accent {
+    @apply text-gold;
+  }
+
+  .gold-line {
+    @apply w-12 h-px bg-gold my-2;
   }
 
   .btn-primary {
