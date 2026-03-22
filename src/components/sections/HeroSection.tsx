@@ -33,10 +33,9 @@ export default function HeroSection() {
             className="fade-up w-full max-w-7xl mx-auto px-6 md:px-10 pt-32 pb-12 md:pt-0 md:pb-0 md:pl-16 lg:pl-24"
           >
             <img
-              src="/S__18882590.jpg"
+              src="/logo.svg"
               alt="Le Cherien ロゴ"
-              className="w-36 md:w-48 mb-8 md:mb-10"
-              style={{ mixBlendMode: 'multiply' }}
+              className="w-36 md:w-48 mb-8 md:mb-10 opacity-75"
             />
 
             <span className="block text-charcoal/60 text-xs tracking-widest2 font-sans mb-3">

@@ -56,6 +56,20 @@ export default function AboutLriagePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-start">
             <div className="fade-up space-y-5">
+              <div className="flex items-start gap-5 mb-4">
+                <div className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0 border border-border shadow-sm">
+                  <img
+                    src="/images/LINE_ALBUM_LeCherien(平野撮影)_260322_33.jpg"
+                    alt="代表"
+                    className="w-full h-full object-cover object-top"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="pt-2">
+                  <p className="text-charcoal font-serif text-sm tracking-widest mb-1">Le Cherien</p>
+                  <p className="text-mid-gray text-xs font-sans tracking-wide">代表</p>
+                </div>
+              </div>
               <p className="text-text-main font-sans text-sm leading-loose">
                 このたびはル・シェリアのホームページをご覧いただき、誠にありがとうございます。
               </p>
@@ -68,8 +82,7 @@ export default function AboutLriagePage() {
               <p className="text-text-main font-sans text-sm leading-loose">
                 初めていらっしゃる方も、どうか安心してお越しください。スタッフ一同、心よりお待ちしております。
               </p>
-              <div className="w-8 h-px bg-silver pt-4" />
-              <p className="text-charcoal font-serif text-sm tracking-widest">Le Cherien</p>
+              <div className="w-8 h-px bg-silver" />
             </div>
 
             <div className="fade-up" style={{ transitionDelay: '80ms' }}>
