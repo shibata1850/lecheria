@@ -51,19 +51,12 @@ export default function SalonInfoSection() {
             </div>
           </div>
 
-          <div className="fade-up">
-            <div className="w-full h-64 md:h-80 shadow-[0_4px_24px_rgba(0,0,0,0.12)]">
-              <iframe
-                src="https://maps.google.com/maps?q=%E5%B2%A9%E6%89%8B%E7%9C%8C%E5%8C%97%E4%B8%8A%E5%B8%82%E3%81%95%E3%81%8F%E3%82%89%E9%80%9A%E3%82%8A3%E4%B8%81%E7%9B%AE17-33&output=embed&hl=ja"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="ル・シェリア 地図"
-              />
-            </div>
+          <div className="fade-up flex items-center justify-center">
+            <img
+              src="/S__18882590.png"
+              alt="Le Cherien ロゴ"
+              className="w-64 md:w-80 opacity-80"
+            />
           </div>
         </div>
       </div>
