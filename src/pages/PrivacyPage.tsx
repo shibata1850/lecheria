@@ -35,7 +35,7 @@ const SECTIONS = [
     title: 'お問い合わせ先',
     content: `個人情報に関するお問い合わせは、以下の連絡先までご連絡ください。
 
-サロン名：${SALON.name}（${SALON.nameEn}）
+サロン名：${SALON.name}
 所在地：${SALON.addressLine1}
 TEL：${SALON.tel}
 Email：${SALON.contactEmail}`,

@@ -5,7 +5,7 @@ import ContactSection from '../components/sections/ContactSection';
 import { SALON } from '../data/salonData';
 
 const INFO_ROWS = [
-  { label: 'サロン名', value: `${SALON.name}（${SALON.nameEn}）` },
+  { label: 'サロン名', value: SALON.name },
   { label: '住所', value: `${SALON.addressLine2} ${SALON.addressLine1}` },
   { label: 'TEL', value: SALON.tel },
   { label: '営業時間', value: `${SALON.hours}${SALON.hoursNote}` },
