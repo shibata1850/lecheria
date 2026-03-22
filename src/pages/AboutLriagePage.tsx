@@ -88,9 +88,9 @@ export default function AboutLriagePage() {
             <div className="fade-up" style={{ transitionDelay: '80ms' }}>
               <div className="aspect-[4/5] overflow-hidden">
                 <img
-                  src="https://images.pexels.com/photos/7578808/pexels-photo-7578808.jpeg?auto=compress&cs=tinysrgb&w=800"
-                  alt="代表メッセージ"
-                  className="w-full h-full object-cover"
+                  src="/images/LINE_ALBUM_LeCherien(平野撮影)_260322_32.jpg"
+                  alt="ル・シェリア スタッフ"
+                  className="w-full h-full object-cover object-top"
                   loading="lazy"
                 />
               </div>

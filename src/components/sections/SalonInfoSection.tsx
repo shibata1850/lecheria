@@ -54,7 +54,7 @@ export default function SalonInfoSection() {
           <div className="fade-up">
             <div className="w-full h-64 md:h-80 shadow-[0_4px_24px_rgba(0,0,0,0.12)]">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3112.3!2d141.1134!3d39.2988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f7b7c9f1b0e0001%3A0x0!2z5bKB5omA55yM5YyX5LiK5biC44GV44GP44KJ5YCp44KK3LQgM-S4geeVqjE3LTMz!5e0!3m2!1sja!2sjp!4v1700000000000!5m2!1sja!2sjp"
+                src="https://maps.google.com/maps?q=%E5%B2%A9%E6%89%8B%E7%9C%8C%E5%8C%97%E4%B8%8A%E5%B8%82%E3%81%95%E3%81%8F%E3%82%89%E9%80%9A%E3%82%8A3%E4%B8%81%E7%9B%AE17-33&output=embed&hl=ja"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

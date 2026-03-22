@@ -45,20 +45,29 @@ export default function SalonPage() {
 
           <div className="fade-up mb-16">
             <SectionHeader label="ACCESS" title="アクセス・地図" align="left" />
-            <div className="bg-soft-gray border border-border flex items-center justify-center" style={{ height: '400px' }}>
-              <div className="text-center">
-                <p className="text-mid-gray text-sm font-sans mb-4">地図を表示するには Google Map を開いてください</p>
-                <a
-                  href={SALON.googleMapUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-primary"
-                >
-                  Google Mapで見る
-                </a>
-              </div>
+            <div className="w-full overflow-hidden border border-border" style={{ height: '400px' }}>
+              <iframe
+                src="https://maps.google.com/maps?q=%E5%B2%A9%E6%89%8B%E7%9C%8C%E5%8C%97%E4%B8%8A%E5%B8%82%E3%81%95%E3%81%8F%E3%82%89%E9%80%9A%E3%82%8A3%E4%B8%81%E7%9B%AE17-33&output=embed&hl=ja"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="ル・シェリア 地図"
+              />
             </div>
-            <p className="text-mid-gray text-xs font-sans mt-3">{SALON.access}</p>
+            <div className="flex items-center justify-between mt-3">
+              <p className="text-mid-gray text-xs font-sans">{SALON.access}</p>
+              <a
+                href={SALON.googleMapUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs font-sans text-charcoal/60 hover:text-charcoal underline underline-offset-2 transition-colors duration-200"
+              >
+                Google Mapで開く
+              </a>
+            </div>
           </div>
 
           <div className="fade-up mb-16">
