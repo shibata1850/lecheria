@@ -1,5 +1,5 @@
 export const SALON = {
-  name: 'ル・シェリア',
+  name: 'Le Cherien(ル・シェリア）',
   nameEn: 'Le Cherien',
   nameEnUpper: 'LE CHERIEN',
   brandName: "L'Riage.",
