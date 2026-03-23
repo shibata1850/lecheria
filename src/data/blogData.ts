@@ -18,7 +18,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'お知らせ',
     date: '2026.03.01',
     excerpt: '岩手県北上市のエステサロン ル・シェリアの公式ホームページをオープンいたしました。',
-    image: '/images/LINE_ALBUM_LeCherien(平野撮影)_260322_7.jpg',
+    image: '/images/salon-line-7.jpg',
     tags: ['お知らせ', '北上市 エステ'],
     content: `岩手県北上市のエステサロン ル・シェリアの公式ホームページをオープンいたしました。
 

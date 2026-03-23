@@ -59,7 +59,7 @@ export default function AboutLriagePage() {
               <div className="flex items-start gap-5 mb-4">
                 <div className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0 border border-border shadow-sm">
                   <img
-                    src="/images/LINE_ALBUM_LeCherien(平野撮影)_260322_33.jpg"
+                    src="/images/salon-line-33.jpg"
                     alt="代表"
                     className="w-full h-full object-cover object-top"
                     loading="lazy"
@@ -88,7 +88,7 @@ export default function AboutLriagePage() {
             <div className="fade-up" style={{ transitionDelay: '80ms' }}>
               <div className="aspect-[4/5] overflow-hidden">
                 <img
-                  src="/images/LINE_ALBUM_LeCherien(平野撮影)_260322_32.jpg"
+                  src="/images/salon-line-32.jpg"
                   alt="ル・シェリア スタッフ"
                   className="w-full h-full object-cover object-top"
                   loading="lazy"

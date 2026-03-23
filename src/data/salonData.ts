@@ -25,8 +25,8 @@ export const SALON = {
 };
 
 export const GALLERY_IMAGES = [
-  { id: 1, src: '/images/LINE_ALBUM_LeCherien(平野撮影)_260322_7.jpg', alt: 'サロン外観' },
-  { id: 2, src: '/images/LINE_ALBUM_LeCherien(平野撮影)_260322_21.jpg', alt: 'サロン内観・受付' },
+  { id: 1, src: '/images/salon-line-7.jpg', alt: 'サロン外観' },
+  { id: 2, src: '/images/salon-line-21.jpg', alt: 'サロン内観・受付' },
   { id: 3, src: '/images/IMG_7983.JPG', alt: '施術ルーム' },
   { id: 4, src: '/images/IMG_7994.JPG', alt: 'パウダールーム' },
   { id: 5, src: '/images/IMG_7940.JPG', alt: 'サロン内観' },
