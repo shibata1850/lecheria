@@ -36,7 +36,7 @@ export default function ConceptSection() {
                 className="w-full aspect-[4/5] object-cover img-shadow"
                 loading="lazy"
               />
-              <div className="absolute -bottom-8 -left-8 w-2/3">
+              <div className="absolute -bottom-10 -left-6 w-3/4">
                 <img
                   src="/images/salon-line-7.jpg"
                   alt="ル・シェリア 外観"

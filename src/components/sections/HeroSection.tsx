@@ -93,21 +93,21 @@ export default function HeroSection() {
         </div>
       </div>
 
-      <div className="md:hidden flex flex-col">
-        <div className="relative w-full aspect-[4/3] overflow-hidden">
+      <div className="md:hidden relative w-full" style={{ minHeight: '100svh' }}>
+        <div className="absolute inset-0 overflow-hidden">
           <img
             src="/TOP.png"
             alt="エステ施術"
             className="ken-burns w-full h-full object-cover object-center"
             loading="eager"
           />
-          <div className="absolute inset-0 bg-white/25" />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white/70" />
+          <div className="absolute inset-0 bg-white/35" />
+          <div className="absolute inset-0 bg-gradient-to-r from-white/55 via-white/25 to-transparent" />
         </div>
 
         <div
           ref={mobileRef}
-          className="fade-up px-6 pt-8 pb-10 bg-white"
+          className="fade-up relative z-10 flex flex-col justify-center min-h-[100svh] px-6 pt-28 pb-16"
         >
           <img
             src="/S__18882590.png"
@@ -128,7 +128,7 @@ export default function HeroSection() {
             {SALON.tagline}
           </h1>
           <div className="w-8 h-px bg-gold mb-5" />
-          <p className="text-charcoal/65 text-sm font-sans leading-loose mb-7 tracking-wide">
+          <p className="text-charcoal/70 text-sm font-sans leading-loose mb-7 tracking-wide">
             {SALON.subtagline}
           </p>
           <div className="flex flex-wrap gap-3 mb-7">
