@@ -2,13 +2,13 @@ import { useEffect, useRef } from 'react';
 import { SALON } from '../../data/salonData';
 
 export default function HeroSection() {
-  const textRef = useRef<HTMLDivElement>(null);
+  const desktopRef = useRef<HTMLDivElement>(null);
+  const mobileRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const el = textRef.current;
-    if (!el) return;
     const timer = setTimeout(() => {
-      el.classList.add('visible');
+      desktopRef.current?.classList.add('visible');
+      mobileRef.current?.classList.add('visible');
     }, 300);
     return () => clearTimeout(timer);
   }, []);
@@ -30,7 +30,7 @@ export default function HeroSection() {
         <div className="relative z-10 flex flex-col min-h-screen">
           <div className="flex-1 flex items-center">
             <div
-              ref={textRef}
+              ref={desktopRef}
               className="fade-up w-full max-w-7xl mx-auto px-10 pt-0 pb-0 pl-16 lg:pl-24"
             >
               <img
@@ -106,7 +106,7 @@ export default function HeroSection() {
         </div>
 
         <div
-          ref={textRef}
+          ref={mobileRef}
           className="fade-up px-6 pt-8 pb-10 bg-white"
         >
           <img
