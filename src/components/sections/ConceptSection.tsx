@@ -29,14 +29,14 @@ export default function ConceptSection() {
           </div>
 
           <div className="fade-up relative">
-            <div className="relative pb-16 md:pb-0">
+            <div className="relative pb-20">
               <img
                 src="/images/salon-1.jpeg"
                 alt="ル・シェリア 店内"
                 className="w-full aspect-[4/5] object-cover img-shadow"
                 loading="lazy"
               />
-              <div className="absolute -bottom-8 -left-8 w-2/3 hidden md:block">
+              <div className="absolute -bottom-8 -left-8 w-2/3">
                 <img
                   src="/images/salon-line-7.jpg"
                   alt="ル・シェリア 外観"
