@@ -58,7 +58,10 @@ export default function HairRemovalPage() {
 
           <div className="fade-up mb-16">
             <SectionHeader label="PRICE" title="料金表" align="left" />
-            <PriceTable items={cat.items} />
+            <PriceTable
+              items={cat.items}
+              taxNote="※価格は税抜き表示です。"
+            />
           </div>
 
           <div className="fade-up mb-16">

@@ -58,7 +58,22 @@ export default function BodyPage() {
 
           <div className="fade-up mb-16">
             <SectionHeader label="PRICE" title="料金表" align="left" />
-            <PriceTable items={cat.items} />
+            <div className="mb-4 flex flex-wrap gap-4 text-xs font-sans">
+              <span className="inline-flex items-center gap-1.5 text-mid-gray">
+                <span className="w-3 h-3 rounded-sm bg-stone-100 border border-border inline-block" />
+                会員価格
+              </span>
+              <span className="inline-flex items-center gap-1.5 text-amber-700">
+                <span className="w-3 h-3 rounded-sm bg-amber-50 border border-amber-200 inline-block" />
+                お試し価格
+              </span>
+            </div>
+            <PriceTable
+              items={cat.items}
+              showAllPrices
+              taxNote="※価格は税抜き表示です。"
+              memberNote="※年会費 ¥10,000（税抜き）"
+            />
           </div>
 
           <div className="fade-up mb-16">

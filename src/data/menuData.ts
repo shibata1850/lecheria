@@ -15,12 +15,14 @@ export interface MenuCategory {
 
 export interface MenuItem {
   name: string;
+  nameDetail?: string;
   duration?: string;
   price: string;
   memberPrice?: string;
   trialPrice?: string;
   description?: string;
   isOption?: boolean;
+  optionNote?: string;
 }
 
 export const MENU_CATEGORIES: MenuCategory[] = [
@@ -36,17 +38,17 @@ export const MENU_CATEGORIES: MenuCategory[] = [
     recommended: ['身体の疲れが抜けない方', 'むくみが気になる方', 'ボディラインを整えたい方', 'リラックスしたい方'],
     features: ['東洋医学ベースのデトックスケア', '痩身・整体メニューも充実', '遠赤外線ドーム完備', '施術後のカウンセリング'],
     items: [
-      { name: 'Angel Feather Body-Stretch＆Squeeze整体（肩甲骨剥がし×筋膜×リンパ×小顔の全身解放ケア）', duration: '75分', price: '', trialPrice: '¥9,000' },
-      { name: 'Traditional Balinese Herbal Treatment（バリ伝統ハーバルトリートメント）', duration: '60分', price: '', trialPrice: '¥4,500' },
-      { name: 'Meridian Detox Release（経絡×リンパで老廃物を深部から排出）', duration: '45分', price: '', trialPrice: '¥3,980' },
-      { name: 'Gut Flow Release（腸もみ×ストレッチで巡りを整える内側ケア）', duration: '45分', price: '', trialPrice: '¥3,980' },
-      { name: 'Body Alignment Stretch（骨格×姿勢×全身バランスリセット）', duration: '30分', price: '', trialPrice: '¥3,980' },
-      { name: 'Relaxing Body Care（ドライリラクゼーション）', duration: '60分', price: '', trialPrice: '¥3,980' },
-      { name: 'Dry Head（眼精疲労×睡眠の質を高める）', duration: '30分', price: '', trialPrice: '¥1,980', isOption: true },
-      { name: 'Oil Foot Care（むくみ冷え性×足の疲労ケア）', duration: '30分', price: '', trialPrice: '¥1,980', isOption: true },
-      { name: 'Photo Bust Lift Treatment（IPL光美胸ケア）', duration: '90分', price: '', trialPrice: '¥7,500' },
-      { name: 'Photo Hip Lift Treatment（IPL光美尻ケア）', duration: '90分', price: '', trialPrice: '¥7,500' },
-      { name: 'Premium Detox Dome（遠赤外線による温活・代謝・デトックスケア）', duration: '30分', price: '', trialPrice: '¥500', isOption: true },
+      { name: 'Angel Feather Body – Stretch & Squeeze整体', nameDetail: '肩甲骨剥がし×筋膜×リンパ×小顔の全身解放ケア', duration: '75分', price: '¥25,000', memberPrice: '¥17,500', trialPrice: '¥9,000' },
+      { name: 'Traditional Balinese Herbal Treatment', nameDetail: 'バリ伝統ハーバルトリートメント', duration: '60分', price: '¥15,000', memberPrice: '¥10,000', trialPrice: '¥4,500' },
+      { name: 'Meridian Detox Release', nameDetail: '経絡×リンパで老廃物を深部から排出', duration: '45分', price: '¥15,000', memberPrice: '¥12,000', trialPrice: '¥3,980' },
+      { name: 'Gut Flow Release', nameDetail: '腸もみ×ストレッチで巡りを整える内側ケア', duration: '45分', price: '¥15,000', memberPrice: '¥12,000', trialPrice: '¥3,980' },
+      { name: 'Body Alignment Stretch', nameDetail: '骨格×姿勢×全身バランスリセット', duration: '30分', price: '¥8,000', memberPrice: '¥6,500', trialPrice: '¥3,980' },
+      { name: 'Relaxing Body Care', nameDetail: '服の上から全身もみほぐし', duration: '60分', price: '¥8,000', memberPrice: '¥6,000', trialPrice: '¥3,980' },
+      { name: 'Dry Head', nameDetail: '眼精疲労×睡眠の質を高める', duration: '30分', price: '¥5,000', memberPrice: '¥3,000', trialPrice: '¥1,980', isOption: true, optionNote: 'Relaxing Body Careとのセット施術' },
+      { name: 'Oil Foot Care', nameDetail: 'むくみ冷え性×足の疲労ケア', duration: '30分', price: '¥5,500', memberPrice: '¥3,500', trialPrice: '¥1,980', isOption: true, optionNote: 'Relaxing Body Careとのセット施術' },
+      { name: 'Photo Bust Lift Treatment', nameDetail: 'LPL光美胸ケア', duration: '90分', price: '¥35,000', memberPrice: '¥18,000', trialPrice: '¥7,980' },
+      { name: 'Photo Hip Lift Treatment', nameDetail: 'IPL光美尻ケア', duration: '90分', price: '¥35,000', memberPrice: '¥18,000', trialPrice: '¥7,980' },
+      { name: 'Premium Detox Dome', nameDetail: '遠赤外線による温活・代謝・デトックスケア', duration: '30分', price: '¥3,500', memberPrice: '¥1,000', trialPrice: '¥500', isOption: true },
     ],
   },
   {
@@ -109,16 +111,18 @@ export const MENU_CATEGORIES: MenuCategory[] = [
     nameEn: 'Hair Removal',
     nameJa: '脱毛',
     description: 'お肌への負担に配慮しながら、気になるムダ毛を丁寧にケア。レディース・メンズどちらにも対応し、部位別のご相談も承っております。',
-    image: '/images/脱毛.png',
-    priceFrom: '¥3,300〜',
-    trialPriceFrom: '¥3,300〜',
+    image: '/images/脱毛.jpg',
+    priceFrom: '¥1,000〜',
+    trialPriceFrom: '¥1,000〜',
     recommended: ['ムダ毛が気になる方', 'セルフケアの手間を省きたい方', '敏感肌でお悩みの方', 'メンズの方も歓迎'],
     features: ['丁寧なカウンセリング', '部位別の柔軟なプラン', 'レディース・メンズ対応', '肌状態に合わせた施術'],
     items: [
-      { name: '顔脱毛', price: '¥4,400〜' },
-      { name: 'VIO脱毛', price: '¥5,500〜' },
-      { name: '全身脱毛', price: '¥9,800〜' },
-      { name: 'メンズヒゲ脱毛', price: '¥3,300〜' },
+      { name: '顔脱毛（レディース）', price: '¥1,980' },
+      { name: '髭脱毛＋美顔付き（メンズ）', price: '¥5,500' },
+      { name: '眉毛デザイン脱毛', price: '¥1,980' },
+      { name: 'VIO脱毛', price: '¥9,800' },
+      { name: '全身脱毛（プチパーツ1箇所）', price: '¥1,000〜' },
+      { name: '全身脱毛（ラージパーツ1箇所）', price: '¥3,000〜' },
     ],
   },
   {
@@ -127,7 +131,7 @@ export const MENU_CATEGORIES: MenuCategory[] = [
     nameEn: 'Machine Care',
     nameJa: 'マシンケア',
     description: '先進美容機器で、手技だけでは届きにくいお悩みにアプローチ。目的に合わせた機器選択で、効率よく理想の肌・ボディへ導きます。',
-    image: '/images/マシンケア.png',
+    image: '/images/マシンケア.jpg',
     priceFrom: '¥5,500〜',
     trialPriceFrom: '¥5,500〜',
     recommended: ['効率よくケアしたい方', 'ハンドと機器を組み合わせたい方', '気になる部位を集中ケアしたい方', '美肌を目指したい方'],
