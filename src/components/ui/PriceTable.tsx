@@ -35,24 +35,24 @@ export default function PriceTable({ items, memberOnly, showAllPrices, taxNote, 
         )}
       </td>
       {showRegular && (
-        <td className="text-right text-charcoal text-sm font-serif font-medium px-4 py-4 whitespace-nowrap">
+        <td className="text-right text-charcoal text-sm font-sans font-medium px-4 py-4 whitespace-nowrap">
           {item.price || <span className="text-mid-gray text-xs">-</span>}
         </td>
       )}
       {showMember && (
-        <td className="text-right text-charcoal text-sm font-serif font-medium px-4 py-4 bg-stone-50/70 whitespace-nowrap">
+        <td className="text-right text-charcoal text-sm font-sans font-medium px-4 py-4 bg-stone-50/70 whitespace-nowrap">
           {item.memberPrice || <span className="text-mid-gray text-xs">-</span>}
         </td>
       )}
       {showTrial && (
-        <td className="text-right text-sm font-serif font-medium px-4 py-4 bg-amber-50/60 whitespace-nowrap">
+        <td className="text-right text-sm font-sans font-medium px-4 py-4 bg-amber-50/60 whitespace-nowrap">
           {item.trialPrice
             ? <span className="text-amber-700">{item.trialPrice}</span>
             : <span className="text-mid-gray text-xs">-</span>}
         </td>
       )}
       {!showAllPrices && !hasTrialPrice && (
-        <td className="text-right text-charcoal text-sm font-serif font-medium px-4 py-4 whitespace-nowrap">
+        <td className="text-right text-charcoal text-sm font-sans font-medium px-4 py-4 whitespace-nowrap">
           {memberOnly && item.memberPrice ? item.memberPrice : item.price || '-'}
         </td>
       )}
@@ -126,17 +126,17 @@ export default function PriceTable({ items, memberOnly, showAllPrices, taxNote, 
                       )}
                     </td>
                     {showRegular && (
-                      <td className="text-right text-charcoal text-sm font-serif font-medium px-4 py-3 whitespace-nowrap">
+                      <td className="text-right text-charcoal text-sm font-sans font-medium px-4 py-3 whitespace-nowrap">
                         {item.price || <span className="text-mid-gray text-xs">-</span>}
                       </td>
                     )}
                     {showMember && (
-                      <td className="text-right text-charcoal text-sm font-serif font-medium px-4 py-3 bg-stone-50/70 whitespace-nowrap">
+                      <td className="text-right text-charcoal text-sm font-sans font-medium px-4 py-3 bg-stone-50/70 whitespace-nowrap">
                         {item.memberPrice || <span className="text-mid-gray text-xs">-</span>}
                       </td>
                     )}
                     {optionItems.some((oi) => oi.trialPrice) && (
-                      <td className="text-right text-sm font-serif font-medium px-4 py-3 bg-amber-50/60 whitespace-nowrap">
+                      <td className="text-right text-sm font-sans font-medium px-4 py-3 bg-amber-50/60 whitespace-nowrap">
                         {item.trialPrice
                           ? <span className="text-amber-700">{item.trialPrice}</span>
                           : <span className="text-mid-gray text-xs">-</span>}

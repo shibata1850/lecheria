@@ -16,6 +16,7 @@ export default {
       fontFamily: {
         serif: ['"Cormorant Garamond"', '"Noto Serif JP"', 'Georgia', 'serif'],
         sans: ['"Noto Sans JP"', 'sans-serif'],
+        price: ['"Noto Sans JP"', 'sans-serif'],
       },
       letterSpacing: {
         widest2: '0.2em',

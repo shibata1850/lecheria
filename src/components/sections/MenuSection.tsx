@@ -34,8 +34,7 @@ export default function MenuSection() {
                 <h3 className="font-serif text-base md:text-lg text-charcoal font-light mb-2">{cat.nameJa}</h3>
                 <div className="w-5 h-px bg-gold mb-2" />
                 <p className="text-mid-gray text-xs font-sans leading-relaxed line-clamp-2 mb-3">{cat.description}</p>
-                <div className="flex items-center justify-between">
-                  <span className="text-charcoal font-serif text-sm">{cat.priceFrom}〜</span>
+                <div className="flex items-center justify-end">
                   <span className="text-gold text-xs tracking-wider font-sans group-hover:underline underline-offset-4 transition-all duration-200">
                     詳しく見る →
                   </span>
