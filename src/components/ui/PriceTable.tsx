@@ -8,6 +8,22 @@ interface PriceTableProps {
   memberNote?: string;
 }
 
+function addTax(priceStr: string): string {
+  if (!priceStr || priceStr === '-') return priceStr;
+  return priceStr.replace(/¥([\d,]+)/g, (_, num) => {
+    const n = parseInt(num.replace(/,/g, ''), 10);
+    if (isNaN(n)) return `¥${num}`;
+    const taxed = Math.floor(n * 1.1);
+    return `¥${num}<span class="text-[10px] text-mid-gray font-normal ml-0.5">(税込¥${taxed.toLocaleString()})</span>`;
+  });
+}
+
+function PriceCell({ price }: { price: string }) {
+  if (!price) return <span className="text-mid-gray text-xs">-</span>;
+  const html = addTax(price);
+  return <span dangerouslySetInnerHTML={{ __html: html }} />;
+}
+
 export default function PriceTable({ items, memberOnly, showAllPrices, taxNote, memberNote }: PriceTableProps) {
   const mainItems = items.filter((item) => !item.isOption);
   const optionItems = items.filter((item) => item.isOption);
@@ -36,24 +52,28 @@ export default function PriceTable({ items, memberOnly, showAllPrices, taxNote, 
       </td>
       {showRegular && (
         <td className="text-right text-charcoal text-sm font-sans font-medium px-4 py-4 whitespace-nowrap">
-          {item.price || <span className="text-mid-gray text-xs">-</span>}
+          {item.price ? <PriceCell price={item.price} /> : <span className="text-mid-gray text-xs">-</span>}
         </td>
       )}
       {showMember && (
         <td className="text-right text-charcoal text-sm font-sans font-medium px-4 py-4 bg-stone-50/70 whitespace-nowrap">
-          {item.memberPrice || <span className="text-mid-gray text-xs">-</span>}
+          {item.memberPrice ? <PriceCell price={item.memberPrice} /> : <span className="text-mid-gray text-xs">-</span>}
         </td>
       )}
       {showTrial && (
         <td className="text-right text-sm font-sans font-medium px-4 py-4 bg-amber-50/60 whitespace-nowrap">
           {item.trialPrice
-            ? <span className="text-amber-700">{item.trialPrice}</span>
+            ? <span className="text-amber-700"><PriceCell price={item.trialPrice} /></span>
             : <span className="text-mid-gray text-xs">-</span>}
         </td>
       )}
       {!showAllPrices && !hasTrialPrice && (
         <td className="text-right text-charcoal text-sm font-sans font-medium px-4 py-4 whitespace-nowrap">
-          {memberOnly && item.memberPrice ? item.memberPrice : item.price || '-'}
+          {memberOnly && item.memberPrice
+            ? <PriceCell price={item.memberPrice} />
+            : item.price
+              ? <PriceCell price={item.price} />
+              : '-'}
         </td>
       )}
     </tr>
@@ -127,18 +147,18 @@ export default function PriceTable({ items, memberOnly, showAllPrices, taxNote, 
                     </td>
                     {showRegular && (
                       <td className="text-right text-charcoal text-sm font-sans font-medium px-4 py-3 whitespace-nowrap">
-                        {item.price || <span className="text-mid-gray text-xs">-</span>}
+                        {item.price ? <PriceCell price={item.price} /> : <span className="text-mid-gray text-xs">-</span>}
                       </td>
                     )}
                     {showMember && (
                       <td className="text-right text-charcoal text-sm font-sans font-medium px-4 py-3 bg-stone-50/70 whitespace-nowrap">
-                        {item.memberPrice || <span className="text-mid-gray text-xs">-</span>}
+                        {item.memberPrice ? <PriceCell price={item.memberPrice} /> : <span className="text-mid-gray text-xs">-</span>}
                       </td>
                     )}
                     {optionItems.some((oi) => oi.trialPrice) && (
                       <td className="text-right text-sm font-sans font-medium px-4 py-3 bg-amber-50/60 whitespace-nowrap">
                         {item.trialPrice
-                          ? <span className="text-amber-700">{item.trialPrice}</span>
+                          ? <span className="text-amber-700"><PriceCell price={item.trialPrice} /></span>
                           : <span className="text-mid-gray text-xs">-</span>}
                       </td>
                     )}

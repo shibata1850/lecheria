@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 import SectionHeader from '../../components/ui/SectionHeader';
-import PriceTable from '../../components/ui/PriceTable';
 import ContactSection from '../../components/sections/ContactSection';
 import { MENU_CATEGORIES } from '../../data/menuData';
 
@@ -20,6 +19,15 @@ const FAQS = [
     q: '生理中でも受けられますか？',
     a: 'VIO・下腹部の施術はお控えいただいておりますが、他の部位であれば施術可能です。詳しくはご予約時にお知らせください。',
   },
+];
+
+const PARTS_SMALL = ['脇', 'うなじ', '手足の甲', '指', 'ヘソ下'];
+const PARTS_LARGE = ['ヒジ上', 'ヒジ下', '背中上', '背中下', 'ヒザ上', 'ヒザ下', 'お腹', '胸', '腰'];
+
+const MENS_FACIAL_MENU = [
+  'フェイス造美',
+  'フェイススリム',
+  '東洋医学オールハンドフェイシャル',
 ];
 
 export default function HairRemovalPage() {
@@ -58,10 +66,87 @@ export default function HairRemovalPage() {
 
           <div className="fade-up mb-16">
             <SectionHeader label="PRICE" title="料金表" align="left" />
-            <PriceTable
-              items={cat.items}
-              taxNote="※価格は税抜き表示です。"
-            />
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <div className="border border-border rounded-sm overflow-hidden">
+                <div className="bg-soft-gray px-5 py-3 border-b border-border">
+                  <p className="text-xs text-mid-gray font-sans tracking-wider">顔・単独パーツ</p>
+                </div>
+                <div className="divide-y divide-border">
+                  {[
+                    { name: '顔脱毛（レディース）', price: '¥1,980' },
+                    { name: '眉毛デザイン脱毛', price: '¥1,980' },
+                    { name: 'VIO脱毛', price: '¥9,800' },
+                  ].map((item, i) => (
+                    <div key={i} className="px-5 py-3 flex items-center justify-between">
+                      <span className="text-charcoal text-sm font-sans">{item.name}</span>
+                      <span className="text-charcoal text-sm font-sans font-medium whitespace-nowrap ml-4">
+                        {item.price}
+                        <span className="text-[10px] text-mid-gray font-normal ml-0.5">
+                          (税込{Math.floor(parseInt(item.price.replace(/[¥,]/g, ''), 10) * 1.1).toLocaleString()}円)
+                        </span>
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="border border-border rounded-sm overflow-hidden">
+                <div className="bg-soft-gray px-5 py-3 border-b border-border">
+                  <p className="text-xs text-mid-gray font-sans tracking-wider">全身パーツ</p>
+                </div>
+                <div className="divide-y divide-border">
+                  <div className="px-5 py-4">
+                    <div className="flex items-start justify-between mb-2">
+                      <div>
+                        <p className="text-charcoal text-sm font-sans font-medium">プチパーツ（1箇所）</p>
+                        <p className="text-xs text-mid-gray font-sans mt-1">¥1,000〜<span className="ml-1 text-[10px]">(税込¥1,100〜)</span></p>
+                      </div>
+                    </div>
+                    <div className="flex flex-wrap gap-1.5 mt-2">
+                      {PARTS_SMALL.map((p, i) => (
+                        <span key={i} className="text-xs bg-stone-100 text-charcoal px-2 py-0.5 rounded-full font-sans">{p}</span>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="px-5 py-4">
+                    <div className="flex items-start justify-between mb-2">
+                      <div>
+                        <p className="text-charcoal text-sm font-sans font-medium">ラージパーツ（1箇所）</p>
+                        <p className="text-xs text-mid-gray font-sans mt-1">¥3,000〜<span className="ml-1 text-[10px]">(税込¥3,300〜)</span></p>
+                      </div>
+                    </div>
+                    <div className="flex flex-wrap gap-1.5 mt-2">
+                      {PARTS_LARGE.map((p, i) => (
+                        <span key={i} className="text-xs bg-stone-100 text-charcoal px-2 py-0.5 rounded-full font-sans">{p}</span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="border border-gold/30 rounded-sm overflow-hidden bg-amber-50/30">
+              <div className="bg-gold/10 px-5 py-3 border-b border-gold/20 flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-gold inline-block shrink-0" />
+                <p className="text-sm text-charcoal font-sans font-medium">髭脱毛＋美顔付き（メンズ）</p>
+                <span className="ml-auto text-sm font-medium text-charcoal">¥5,500<span className="text-[10px] text-mid-gray font-normal ml-0.5">(税込¥6,050)</span></span>
+              </div>
+              <div className="px-5 py-4">
+                <p className="text-xs text-mid-gray font-sans mb-3">セット内容の美顔メニュー（下記よりご選択）</p>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                  {MENS_FACIAL_MENU.map((menu, i) => (
+                    <div key={i} className="bg-white border border-border rounded-sm px-4 py-3 flex items-center gap-2">
+                      <span className="font-serif text-gold text-xs tracking-wider shrink-0">0{i + 1}</span>
+                      <span className="text-xs text-charcoal font-sans">{menu}</span>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-xs text-mid-gray font-sans mt-3">※美顔の内容は当日のお肌状態やご希望に合わせてご提案いたします。</p>
+              </div>
+            </div>
+
+            <p className="mt-3 text-mid-gray text-xs font-sans">※価格は税抜き表示です。</p>
           </div>
 
           <div className="fade-up mb-16">

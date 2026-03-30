@@ -19,7 +19,7 @@ export const SALON = {
   googleMapUrl: 'https://www.google.com/maps/search/?api=1&query=39.298833,141.113444',
   googleMapEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3114.5!2d141.113444!3d39.298833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f7b7c9f1b0e0001%3A0x0!2z5bKB5omA55yM5YyX5LiK5biC44GV44GP44KJ5YCp44KK3LQgM-S4geeVqjE3LTMz!5e0!3m2!1sja!2sjp!4v1700000000000!5m2!1sja!2sjp',
   hotpepperUrl: 'https://beauty.hotpepper.jp',
-  lineUrl: 'https://lin.ee/example',
+  lineUrl: 'https://line.me/R/ti/p/@022kxjkg?oat_content=qr#~',
   instagramUrl: 'https://www.instagram.com/le.cherien_?igsh=MTBnem44Yzh6Z2FjNA%3D%3D&utm_source=qr',
   contactEmail: 'info@lecherien.example.com',
 };

@@ -1,11 +1,58 @@
 import { Link } from 'react-router-dom';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 import SectionHeader from '../../components/ui/SectionHeader';
-import PriceTable from '../../components/ui/PriceTable';
 import ContactSection from '../../components/sections/ContactSection';
 import { MENU_CATEGORIES } from '../../data/menuData';
 
 const cat = MENU_CATEGORIES.find((c) => c.id === 'machine')!;
+
+const MACHINE_DETAILS = [
+  {
+    name: 'ラジオ波',
+    duration: '30分',
+    price: '¥3,980',
+    taxPrice: '¥4,378',
+    detail: '深部から温め、引き締め・たるみケアに',
+    image: '/images/マシンケア.jpg',
+    effect: ['引き締め', 'たるみケア', '温活'],
+  },
+  {
+    name: 'セルライトケア',
+    duration: '30分',
+    price: '¥3,980',
+    taxPrice: '¥4,378',
+    detail: 'セルライトに集中アプローチ',
+    image: '/images/menu-body-1.jpeg',
+    effect: ['セルライト', 'むくみ', 'ボディライン'],
+  },
+  {
+    name: 'EMS',
+    duration: '30分',
+    price: '¥3,980',
+    taxPrice: '¥4,378',
+    detail: '筋肉へのアプローチで引き締め・くびれ形成',
+    image: '/images/menu-machine-1.jpeg',
+    effect: ['引き締め', 'くびれ', '筋肉ケア'],
+  },
+  {
+    name: '全身カッピング',
+    duration: '30分',
+    price: '¥3,980',
+    taxPrice: '¥4,378',
+    detail: 'リンパと血流を促進するデトックスケア',
+    image: '/images/menu-body-1.jpeg',
+    effect: ['デトックス', 'リンパ促進', '血流改善'],
+  },
+  {
+    name: '超音波',
+    duration: '30分',
+    price: '¥2,980',
+    taxPrice: '¥3,278',
+    detail: '肌の奥まで美容成分を浸透させる導入ケア',
+    image: '/images/menu-facial-1.jpeg',
+    effect: ['美容成分導入', '毛穴ケア', '肌質改善'],
+  },
+];
 
 const FAQS = [
   {
@@ -57,8 +104,42 @@ export default function MachinePage() {
           </div>
 
           <div className="fade-up mb-16">
-            <SectionHeader label="PRICE" title="料金表" align="left" />
-            <PriceTable items={cat.items} />
+            <SectionHeader label="MENU" title="メニュー・料金" align="left" />
+            <div className="space-y-5">
+              {MACHINE_DETAILS.map((item, i) => (
+                <div key={i} className="border border-border rounded-sm overflow-hidden flex flex-col sm:flex-row">
+                  <div className="sm:w-32 md:w-40 shrink-0">
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="w-full h-32 sm:h-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="flex-1 px-5 py-4 flex flex-col justify-between">
+                    <div>
+                      <div className="flex items-start justify-between gap-3 mb-2">
+                        <div>
+                          <h3 className="font-serif text-base text-charcoal font-medium">{item.name}</h3>
+                          <p className="text-xs text-mid-gray font-sans mt-0.5">{item.detail}</p>
+                        </div>
+                        <div className="shrink-0 text-right">
+                          <p className="text-base font-medium text-charcoal font-sans">{item.price}</p>
+                          <p className="text-[10px] text-mid-gray font-sans">(税込{item.taxPrice})</p>
+                          <p className="text-xs text-mid-gray font-sans mt-0.5">{item.duration}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex flex-wrap gap-1.5 mt-3">
+                      {item.effect.map((e, j) => (
+                        <span key={j} className="text-[10px] bg-soft-gray text-charcoal px-2 py-0.5 rounded-full font-sans tracking-wider">{e}</span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <p className="mt-3 text-mid-gray text-xs font-sans">※価格は税抜き表示です。</p>
           </div>
 
           <div className="fade-up mb-16">

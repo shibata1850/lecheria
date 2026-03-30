@@ -12,8 +12,8 @@ export default function ConceptSection() {
           <SectionHeader label="CONCEPT" title="コンセプト" align="left" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start">
-          <div className="fade-up">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 items-center">
+          <div className="fade-up order-2 lg:order-1">
             <p className="text-text-main font-sans text-sm leading-loose mb-6">
               「ル・シェリア」には、お客様との絆を大切にし、ご縁をつなぐサロンという想いが込められています。
               お客様一人ひとりとの出会いを大切にし、信頼と絆を育みながら、健康と美しさ、癒しの時間を提供します。
@@ -28,22 +28,15 @@ export default function ConceptSection() {
             <span className="text-gold text-xs tracking-widest font-serif">{SALON.nameEn}</span>
           </div>
 
-          <div className="fade-up relative">
-            <div className="relative pb-20">
+          <div className="fade-up order-1 lg:order-2">
+            <div className="relative overflow-hidden rounded-sm img-shadow">
               <img
-                src="/images/salon-1.jpeg"
-                alt="ル・シェリア 店内"
-                className="w-full aspect-[4/5] object-cover img-shadow"
+                src="/TOP copy.png"
+                alt="Le Cherien コンセプト"
+                className="w-full h-[420px] md:h-[520px] object-cover object-center"
                 loading="lazy"
               />
-              <div className="absolute -bottom-10 -left-6 w-3/4">
-                <img
-                  src="/images/salon-line-7.jpg"
-                  alt="ル・シェリア 外観"
-                  className="w-full aspect-square object-cover img-shadow border-4 border-white"
-                  loading="lazy"
-                />
-              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-charcoal/20 to-transparent pointer-events-none" />
             </div>
           </div>
         </div>

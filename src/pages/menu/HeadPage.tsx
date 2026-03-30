@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 import SectionHeader from '../../components/ui/SectionHeader';
-import PriceTable from '../../components/ui/PriceTable';
 import ContactSection from '../../components/sections/ContactSection';
 import { MENU_CATEGORIES } from '../../data/menuData';
 
@@ -51,22 +50,54 @@ export default function HeadPage() {
 
       <section ref={ref as React.RefObject<HTMLElement>} className="bg-white py-20 md:py-28">
         <div className="max-w-4xl mx-auto px-6 md:px-10">
+          <div className="fade-up mb-6">
+            <div className="bg-amber-50 border border-amber-200 rounded-sm px-6 py-4 flex flex-col sm:flex-row sm:items-center gap-2">
+              <span className="text-xs text-amber-700 font-sans tracking-wider font-medium">ご体験料金</span>
+              <span className="font-serif text-lg text-amber-800 font-medium">45分 ¥4,500<span className="text-xs font-sans font-normal ml-1">(税抜き)</span></span>
+            </div>
+          </div>
+
           <div className="fade-up mb-16">
             <SectionHeader label="OVERVIEW" title="施術について" align="left" />
+            <p className="text-charcoal font-serif text-lg mb-2">Head Spa専門店の</p>
+            <p className="font-serif text-xl text-charcoal tracking-widest mb-6">SPECIAL DRY HEAD SPA</p>
             <p className="text-text-main font-sans text-sm leading-loose">{cat.description}</p>
           </div>
 
           <div className="fade-up mb-16">
-            <SectionHeader label="PRICE" title="料金表" align="left" />
-            <PriceTable items={cat.items} />
+            <SectionHeader label="MENU" title="メニュー・料金" align="left" />
+            <div className="space-y-6">
+              {cat.items.map((item, i) => (
+                <div key={i} className="border border-border rounded-sm overflow-hidden">
+                  <div className="bg-soft-gray px-6 py-4 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
+                    <div className="flex-1">
+                      <h3 className="font-serif text-base text-charcoal font-medium underline underline-offset-4 decoration-gold/60 mb-1">{item.name}</h3>
+                      {item.nameDetail && (
+                        <p className="text-xs text-mid-gray font-sans leading-relaxed">{item.nameDetail}</p>
+                      )}
+                    </div>
+                    <div className="shrink-0 text-right">
+                      <p className="text-sm text-charcoal font-sans">通常価格 <span className="font-medium">{item.price}</span><span className="text-[10px] text-mid-gray ml-0.5">(税抜)</span></p>
+                    </div>
+                  </div>
+                  {item.description && (
+                    <div className="bg-rose-50/60 border-t border-rose-100 px-6 py-3">
+                      <p className="text-xs text-rose-700 font-sans font-medium">特別価格</p>
+                      <p className="text-sm text-rose-800 font-sans mt-1 leading-relaxed">{item.description}</p>
+                      <p className="text-xs text-mid-gray font-sans mt-1">+税になります</p>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+            <p className="mt-3 text-mid-gray text-xs font-sans">※価格は税抜き表示です。</p>
           </div>
 
           <div className="fade-up mb-16">
-            <SectionHeader label="RECOMMENDED" title="こんな方におすすめ" align="left" />
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {cat.recommended.map((item, i) => (
-                <li key={i} className="flex items-center gap-3 text-text-main text-sm font-sans">
-                  <span className="w-4 h-px bg-silver inline-block shrink-0" />
+            <SectionHeader label="RECOMMENDED" title="こんな方に" align="left" />
+            <ul className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+              {['目の疲れ・首凝り・慢性頭痛', '睡眠の質が悪く疲れがとれない', '顔のたるみ・頭皮の悩み', '薄毛・ハリ艶のない毛・頭皮の乾燥'].map((item, i) => (
+                <li key={i} className="bg-soft-gray rounded-sm px-4 py-3 text-xs text-charcoal font-sans text-center leading-relaxed">
                   {item}
                 </li>
               ))}

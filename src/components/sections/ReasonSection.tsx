@@ -6,8 +6,9 @@ const REASONS = [
     num: '01',
     title: '上質な空間',
     description: '完全個室のプライベート空間で、周囲を気にせずゆったりとお過ごしいただけます。遠赤外線ドームも完備し、心身を温めながら施術効果を高めます。',
-    image: '/images/IMG_7994.JPG',
-    imageAlt: '完全個室の施術ルーム',
+    image: '/images/IMG_7983.JPG',
+    imageAlt: '施術ルームと美容機器',
+    brighten: true,
   },
   {
     num: '02',
@@ -15,13 +16,15 @@ const REASONS = [
     description: 'お悩みや理想に寄り添う丁寧なカウンセリングで、一人ひとりに合わせた的確なアドバイスをご提供。結果を重視したご提案を行います。',
     image: '/images/IMG_7969.JPG',
     imageAlt: 'カウンセリング・受付スペース',
+    brighten: false,
   },
   {
     num: '03',
     title: '熟練ハンド技術×美容機器',
     description: 'キャリアある経験豊富なスタッフが、ハンド技術と先進美容機器を組み合わせて最適な施術をご提供します。',
-    image: '/images/IMG_7983.JPG',
-    imageAlt: '施術ルームと美容機器',
+    image: '/images/IMG_7994.JPG',
+    imageAlt: '完全個室の施術ルーム',
+    brighten: false,
   },
 ];
 
@@ -47,6 +50,7 @@ export default function ReasonSection() {
                   src={reason.image}
                   alt={reason.imageAlt}
                   className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                  style={reason.brighten ? { filter: 'brightness(1.35) contrast(0.95) saturate(1.1)' } : undefined}
                   loading="lazy"
                 />
               </div>

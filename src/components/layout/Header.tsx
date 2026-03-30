@@ -1,10 +1,20 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { ChevronDown } from 'lucide-react';
 import { SALON } from '../../data/salonData';
+
+const MENU_SUB_ITEMS = [
+  { label: 'ボディ', href: '/menu/body' },
+  { label: 'フェイシャル', href: '/menu/facial' },
+  { label: 'ヘッド', href: '/menu/head' },
+  { label: '脱毛', href: '/menu/hair-removal' },
+  { label: 'マシンケア', href: '/menu/machine' },
+  { label: 'ブライダル', href: '/menu/bridal' },
+];
 
 const NAV_ITEMS = [
   { label: 'TOP', href: '/' },
-  { label: 'MENU', href: '/menu' },
+  { label: 'MENU', href: '/menu', sub: MENU_SUB_ITEMS },
   { label: 'Q&A', href: '/qa' },
   { label: 'SALON', href: '/salon' },
   { label: 'VOICE', href: '/voice' },
@@ -15,6 +25,7 @@ const NAV_ITEMS = [
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [menuExpanded, setMenuExpanded] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -27,6 +38,7 @@ export default function Header() {
 
   useEffect(() => {
     setMenuOpen(false);
+    setMenuExpanded(false);
   }, [location]);
 
   useEffect(() => {
@@ -100,12 +112,12 @@ export default function Header() {
       </header>
 
       <div
-        className={`fixed inset-0 z-40 bg-charcoal flex flex-col justify-center transition-all duration-500 ${
+        className={`fixed inset-0 z-40 bg-charcoal flex flex-col justify-center overflow-y-auto transition-all duration-500 ${
           menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >
-        <nav className="max-w-7xl mx-auto px-10 w-full">
-          <ul className="space-y-6 md:space-y-8">
+        <nav className="max-w-7xl mx-auto px-10 w-full py-20">
+          <ul className="space-y-5 md:space-y-7">
             {NAV_ITEMS.map((item, index) => (
               <li
                 key={item.label}
@@ -116,17 +128,58 @@ export default function Header() {
                 }`}
                 style={{ transitionDelay: menuOpen ? `${index * 60}ms` : '0ms' }}
               >
-                <Link
-                  to={item.href}
-                  className="font-serif text-2xl md:text-4xl font-light text-white tracking-widest hover:text-gold-light transition-colors duration-200"
-                >
-                  {item.label}
-                </Link>
+                {item.sub ? (
+                  <div>
+                    <div className="flex items-center gap-3">
+                      <Link
+                        to={item.href}
+                        className="font-serif text-2xl md:text-4xl font-light text-white tracking-widest hover:text-gold-light transition-colors duration-200"
+                      >
+                        {item.label}
+                      </Link>
+                      <button
+                        onClick={() => setMenuExpanded(!menuExpanded)}
+                        className="text-white/60 hover:text-gold-light transition-colors duration-200 p-1"
+                        aria-label="サブメニューを開く"
+                      >
+                        <ChevronDown
+                          size={20}
+                          className={`transition-transform duration-300 ${menuExpanded ? 'rotate-180' : ''}`}
+                        />
+                      </button>
+                    </div>
+                    <div
+                      className={`overflow-hidden transition-all duration-400 ${
+                        menuExpanded ? 'max-h-96 opacity-100 mt-3' : 'max-h-0 opacity-0'
+                      }`}
+                    >
+                      <ul className="pl-4 border-l border-white/20 space-y-2">
+                        {item.sub.map((sub) => (
+                          <li key={sub.href}>
+                            <Link
+                              to={sub.href}
+                              className="text-white/70 font-sans text-sm md:text-base tracking-wider hover:text-gold-light transition-colors duration-200 block py-1"
+                            >
+                              {sub.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                ) : (
+                  <Link
+                    to={item.href}
+                    className="font-serif text-2xl md:text-4xl font-light text-white tracking-widest hover:text-gold-light transition-colors duration-200"
+                  >
+                    {item.label}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>
 
-          <div className="mt-12 pt-8 border-t border-white/20">
+          <div className="mt-10 pt-8 border-t border-white/20">
             <a
               href={SALON.hotpepperUrl}
               target="_blank"
