@@ -50,12 +50,6 @@ export default function HeadPage() {
 
       <section ref={ref as React.RefObject<HTMLElement>} className="bg-white py-20 md:py-28">
         <div className="max-w-4xl mx-auto px-6 md:px-10">
-          <div className="fade-up mb-6">
-            <div className="bg-amber-50 border border-amber-200 rounded-sm px-6 py-4 flex flex-col sm:flex-row sm:items-center gap-2">
-              <span className="text-xs text-amber-700 font-sans tracking-wider font-medium">ご体験料金</span>
-              <span className="font-serif text-lg text-amber-800 font-medium">45分 ¥4,500<span className="text-xs font-sans font-normal ml-1">(税抜き)</span></span>
-            </div>
-          </div>
 
           <div className="fade-up mb-16">
             <SectionHeader label="OVERVIEW" title="施術について" align="left" />
@@ -66,25 +60,56 @@ export default function HeadPage() {
 
           <div className="fade-up mb-16">
             <SectionHeader label="MENU" title="メニュー・料金" align="left" />
-            <div className="space-y-6">
+
+            <div className="space-y-8">
               {cat.items.map((item, i) => (
                 <div key={i} className="border border-border rounded-sm overflow-hidden">
-                  <div className="bg-soft-gray px-6 py-4 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
-                    <div className="flex-1">
-                      <h3 className="font-serif text-base text-charcoal font-medium underline underline-offset-4 decoration-gold/60 mb-1">{item.name}</h3>
-                      {item.nameDetail && (
-                        <p className="text-xs text-mid-gray font-sans leading-relaxed">{item.nameDetail}</p>
-                      )}
-                    </div>
-                    <div className="shrink-0 text-right">
-                      <p className="text-sm text-charcoal font-sans">通常価格 <span className="font-medium">{item.price}</span><span className="text-[10px] text-mid-gray ml-0.5">(税抜)</span></p>
+                  <div className="bg-soft-gray px-6 py-4">
+                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
+                      <div className="flex-1">
+                        <h3 className="font-serif text-base text-charcoal font-medium underline underline-offset-4 decoration-gold/60 mb-1">{item.name}</h3>
+                        {item.nameDetail && (
+                          <p className="text-xs text-mid-gray font-sans leading-relaxed">{item.nameDetail}</p>
+                        )}
+                      </div>
+                      <div className="shrink-0 text-right">
+                        <p className="text-xs text-mid-gray font-sans">通常価格</p>
+                        <p className="text-sm text-charcoal font-sans font-medium">{item.price}<span className="text-[10px] text-mid-gray font-normal ml-0.5">(税抜)</span></p>
+                      </div>
                     </div>
                   </div>
+
+                  {item.trialPrice && (
+                    <div className="px-6 py-4 bg-amber-50 border-t-2 border-amber-300">
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                        <div className="flex items-center gap-3">
+                          <span className="inline-block bg-amber-500 text-white text-[10px] font-sans font-bold tracking-widest px-2.5 py-1 rounded-sm shrink-0">
+                            お試し価格
+                          </span>
+                          <span className="font-serif text-xl text-amber-800 font-medium">
+                            {item.trialPrice}
+                            <span className="text-xs font-sans font-normal ml-1 text-amber-700">(税抜)</span>
+                          </span>
+                        </div>
+                        <div className="text-right">
+                          <p className="text-[10px] text-amber-600 font-sans mb-0.5">通常価格との差額</p>
+                          <p className="text-xs text-amber-800 font-sans font-medium">初回限定のお得な体験価格</p>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
                   {item.description && (
-                    <div className="bg-rose-50/60 border-t border-rose-100 px-6 py-3">
-                      <p className="text-xs text-rose-700 font-sans font-medium">特別価格</p>
-                      <p className="text-sm text-rose-800 font-sans mt-1 leading-relaxed">{item.description}</p>
-                      <p className="text-xs text-mid-gray font-sans mt-1">+税になります</p>
+                    <div className="px-6 py-3 bg-rose-50 border-t border-rose-100">
+                      <div className="flex items-start gap-2">
+                        <span className="inline-block bg-rose-500 text-white text-[10px] font-sans font-bold tracking-widest px-2 py-0.5 rounded-sm shrink-0 mt-0.5">
+                          コースお得割
+                        </span>
+                        <div>
+                          <p className="text-sm text-rose-800 font-sans leading-relaxed">{item.description}</p>
+                          <p className="text-xs text-mid-gray font-sans mt-0.5">+税になります</p>
+                        </div>
+                      </div>
                     </div>
                   )}
                 </div>
