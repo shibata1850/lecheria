@@ -33,7 +33,7 @@ export default function ConceptSection() {
               <img
                 src="/TOP copy.png"
                 alt="Le Cherien コンセプト"
-                className="w-full h-[420px] md:h-[520px] object-cover object-center"
+                className="w-full h-[420px] md:h-[520px] object-cover object-left-top"
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-charcoal/20 to-transparent pointer-events-none" />
