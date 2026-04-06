@@ -64,14 +64,38 @@ const INITIAL: FormData = {
   privacy: false,
 };
 
+const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
+const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
+
 export default function ContactPage() {
   const [form, setForm] = useState<FormData>(INITIAL);
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const ref = useScrollAnimation();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSending(true);
+    setError(null);
+    try {
+      const res = await fetch(`${SUPABASE_URL}/functions/v1/send-contact-email`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+        },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) {
+        throw new Error('送信に失敗しました。しばらく経ってから再度お試しください。');
+      }
+      setSubmitted(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : '送信に失敗しました。');
+    } finally {
+      setSending(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -276,13 +300,19 @@ export default function ContactPage() {
                   </label>
                 </div>
 
+                {error && (
+                  <div className="border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700 font-sans">
+                    {error}
+                  </div>
+                )}
+
                 <div>
                   <button
                     type="submit"
-                    disabled={!form.privacy}
+                    disabled={!form.privacy || sending}
                     className="btn-primary disabled:opacity-40 disabled:cursor-not-allowed"
                   >
-                    送信する
+                    {sending ? '送信中...' : '送信する'}
                   </button>
                 </div>
               </form>
