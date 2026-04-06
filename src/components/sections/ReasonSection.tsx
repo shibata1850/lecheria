@@ -22,7 +22,7 @@ const REASONS = [
     num: '03',
     title: '熟練ハンド技術×美容機器',
     description: 'キャリアある経験豊富なスタッフが、ハンド技術と先進美容機器を組み合わせて最適な施術をご提供します。',
-    image: '/images/IMG_7969.JPG',
+    image: '/images/セルライト copy.jpg',
     imageAlt: 'セルライトケア・美容機器施術',
     brighten: false,
   },
