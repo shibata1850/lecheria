@@ -25,9 +25,9 @@ const PARTS_SMALL = ['脇', 'うなじ', '手足の甲', '指', 'ヘソ下'];
 const PARTS_LARGE = ['ヒジ上', 'ヒジ下', '背中上', '背中下', 'ヒザ上', 'ヒザ下', 'お腹', '胸', '腰'];
 
 const MENS_FACIAL_MENU = [
-  'フェイス造美',
-  'フェイススリム',
-  '東洋医学オールハンドフェイシャル',
+  'イオン導入',
+  '超音波フェイシャル',
+  '炭酸パック',
 ];
 
 export default function HairRemovalPage() {
@@ -66,6 +66,10 @@ export default function HairRemovalPage() {
 
           <div className="fade-up mb-16">
             <SectionHeader label="PRICE" title="料金表" align="left" />
+            <div className="mb-4 inline-flex items-center gap-2 bg-rose-50 border border-rose-200 rounded-sm px-4 py-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-rose-400 inline-block shrink-0" />
+              <p className="text-xs text-rose-600 font-sans font-medium tracking-wide">下記はすべてお試し価格です</p>
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               <div className="border border-border rounded-sm overflow-hidden">
@@ -80,12 +84,15 @@ export default function HairRemovalPage() {
                   ].map((item, i) => (
                     <div key={i} className="px-5 py-3 flex items-center justify-between">
                       <span className="text-charcoal text-sm font-sans">{item.name}</span>
-                      <span className="text-charcoal text-sm font-sans font-medium whitespace-nowrap ml-4">
-                        {item.price}
-                        <span className="text-[10px] text-mid-gray font-normal ml-0.5">
-                          (税込{Math.floor(parseInt(item.price.replace(/[¥,]/g, ''), 10) * 1.1).toLocaleString()}円)
+                      <div className="flex items-center gap-2 ml-4">
+                        <span className="text-[10px] text-rose-500 font-sans font-medium bg-rose-50 border border-rose-200 px-1.5 py-0.5 rounded-sm whitespace-nowrap">お試し</span>
+                        <span className="text-charcoal text-sm font-sans font-medium whitespace-nowrap">
+                          {item.price}
+                          <span className="text-[10px] text-mid-gray font-normal ml-0.5">
+                            (税込{Math.floor(parseInt(item.price.replace(/[¥,]/g, ''), 10) * 1.1).toLocaleString()}円)
+                          </span>
                         </span>
-                      </span>
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -100,7 +107,10 @@ export default function HairRemovalPage() {
                     <div className="flex items-start justify-between mb-2">
                       <div>
                         <p className="text-charcoal text-sm font-sans font-medium">プチパーツ（1箇所）</p>
-                        <p className="text-xs text-mid-gray font-sans mt-1">¥1,000〜<span className="ml-1 text-[10px]">(税込¥1,100〜)</span></p>
+                        <div className="flex items-center gap-2 mt-1">
+                          <span className="text-[10px] text-rose-500 font-sans font-medium bg-rose-50 border border-rose-200 px-1.5 py-0.5 rounded-sm whitespace-nowrap">お試し</span>
+                          <p className="text-xs text-mid-gray font-sans">¥1,000〜<span className="ml-1 text-[10px]">(税込¥1,100〜)</span></p>
+                        </div>
                       </div>
                     </div>
                     <div className="flex flex-wrap gap-1.5 mt-2">
@@ -113,7 +123,10 @@ export default function HairRemovalPage() {
                     <div className="flex items-start justify-between mb-2">
                       <div>
                         <p className="text-charcoal text-sm font-sans font-medium">ラージパーツ（1箇所）</p>
-                        <p className="text-xs text-mid-gray font-sans mt-1">¥3,000〜<span className="ml-1 text-[10px]">(税込¥3,300〜)</span></p>
+                        <div className="flex items-center gap-2 mt-1">
+                          <span className="text-[10px] text-rose-500 font-sans font-medium bg-rose-50 border border-rose-200 px-1.5 py-0.5 rounded-sm whitespace-nowrap">お試し</span>
+                          <p className="text-xs text-mid-gray font-sans">¥3,000〜<span className="ml-1 text-[10px]">(税込¥3,300〜)</span></p>
+                        </div>
                       </div>
                     </div>
                     <div className="flex flex-wrap gap-1.5 mt-2">
@@ -130,7 +143,10 @@ export default function HairRemovalPage() {
               <div className="bg-gold/10 px-5 py-3 border-b border-gold/20 flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-gold inline-block shrink-0" />
                 <p className="text-sm text-charcoal font-sans font-medium">髭脱毛＋美顔付き（メンズ）</p>
-                <span className="ml-auto text-sm font-medium text-charcoal">¥5,500<span className="text-[10px] text-mid-gray font-normal ml-0.5">(税込¥6,050)</span></span>
+                <div className="ml-auto flex items-center gap-2">
+                  <span className="text-[10px] text-rose-500 font-sans font-medium bg-rose-50 border border-rose-200 px-1.5 py-0.5 rounded-sm whitespace-nowrap">お試し</span>
+                  <span className="text-sm font-medium text-charcoal">¥5,500<span className="text-[10px] text-mid-gray font-normal ml-0.5">(税込¥6,050)</span></span>
+                </div>
               </div>
               <div className="px-5 py-4">
                 <p className="text-xs text-mid-gray font-sans mb-3">セット内容の美顔メニュー（下記よりご選択）</p>
