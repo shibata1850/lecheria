@@ -13,7 +13,7 @@ const MACHINE_DETAILS = [
     price: '¥3,980',
     taxPrice: '¥4,378',
     detail: '深部から温め、引き締め・たるみケアに',
-    image: '/images/マシンケア.png',
+    image: '/images/ラジオ派.png',
     effect: ['引き締め', 'たるみケア', '温活'],
   },
   {
@@ -22,7 +22,7 @@ const MACHINE_DETAILS = [
     price: '¥3,980',
     taxPrice: '¥4,378',
     detail: 'セルライトに集中アプローチ',
-    image: '/images/セルライト.jpg',
+    image: '/images/セルライト.png',
     effect: ['セルライト', 'むくみ', 'ボディライン'],
   },
   {
@@ -31,7 +31,7 @@ const MACHINE_DETAILS = [
     price: '¥3,980',
     taxPrice: '¥4,378',
     detail: '筋肉へのアプローチで引き締め・くびれ形成',
-    image: '/images/マシンケア.jpg',
+    image: '/images/EMS.png',
     effect: ['引き締め', 'くびれ', '筋肉ケア'],
   },
   {
@@ -40,7 +40,7 @@ const MACHINE_DETAILS = [
     price: '¥3,980',
     taxPrice: '¥4,378',
     detail: 'リンパと血流を促進するデトックスケア',
-    image: '/images/menu-body-1.jpeg',
+    image: '/images/カッピング.png',
     effect: ['デトックス', 'リンパ促進', '血流改善'],
   },
   {

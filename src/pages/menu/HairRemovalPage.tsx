@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 import SectionHeader from '../../components/ui/SectionHeader';
 import ContactSection from '../../components/sections/ContactSection';
+import BodyPartIllustration from '../../components/ui/BodyPartIllustration';
 import { MENU_CATEGORIES } from '../../data/menuData';
 
 const cat = MENU_CATEGORIES.find((c) => c.id === 'hair-removal')!;
@@ -163,6 +164,12 @@ export default function HairRemovalPage() {
             </div>
 
             <p className="mt-3 text-mid-gray text-xs font-sans">※価格は税抜き表示です。</p>
+          </div>
+
+          <div className="fade-up mb-16">
+            <SectionHeader label="PARTS GUIDE" title="施術部位ガイド" align="left" />
+            <p className="text-mid-gray text-xs font-sans mb-8">対応している施術部位をイラストでご確認いただけます。</p>
+            <BodyPartIllustration />
           </div>
 
           <div className="fade-up mb-16">
