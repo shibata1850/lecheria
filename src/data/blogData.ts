@@ -38,7 +38,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'クーポン',
     date: '2026.03.01',
     excerpt: '開業を記念した特別メニューをご用意しました。この機会にぜひご利用ください。',
-    image: '/images/フェイシャル.png',
+    image: '/images/facial.png',
     tags: ['クーポン', 'オープン記念', '北上市 エステ'],
     content: `ル・シェリアのオープンを記念して、特別メニューをご用意しております。
 
@@ -63,7 +63,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'お役立ち情報',
     date: '2026.03.01',
     excerpt: '脱毛施術を安全に、そして効果的に受けていただくために知っておきたいポイントをご紹介します。',
-    image: '/images/脱毛.png',
+    image: '/images/hair-removal.png',
     tags: ['お役立ち情報', '脱毛', '北上市 脱毛', '北上市 メンズ脱毛'],
     content: `脱毛施術を受ける前後には、いくつかのポイントに気をつけることで、より安全で効果的なケアにつながります。
 

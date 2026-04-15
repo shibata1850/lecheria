@@ -13,7 +13,7 @@ const MACHINE_DETAILS = [
     price: '¥3,980',
     taxPrice: '¥4,378',
     detail: '深部から温め、引き締め・たるみケアに',
-    image: '/images/ラジオ派.png',
+    image: '/images/radio-wave.png',
     effect: ['引き締め', 'たるみケア', '温活'],
     effectDesc: [
       { label: '深部加温', text: '真皮層・皮下組織まで熱を届け、コラーゲン産生を促進します。' },
@@ -27,7 +27,7 @@ const MACHINE_DETAILS = [
     price: '¥3,980',
     taxPrice: '¥4,378',
     detail: 'セルライトに集中アプローチ',
-    image: '/images/セルライト.png',
+    image: '/images/cellulite.png',
     effect: ['セルライト', 'むくみ', 'ボディライン'],
     effectDesc: [
       { label: 'セルライト分解', text: '凸凹した脂肪細胞の塊（セルライト）を振動・圧力で細かく分解します。' },
@@ -55,7 +55,7 @@ const MACHINE_DETAILS = [
     price: '¥3,980',
     taxPrice: '¥4,378',
     detail: 'リンパと血流を促進するデトックスケア',
-    image: '/images/カッピング.png',
+    image: '/images/cupping.png',
     effect: ['デトックス', 'リンパ促進', '血流改善'],
     effectDesc: [
       { label: '老廃物デトックス', text: '陰圧（吸引）作用で皮膚・筋膜層の老廃物を浮かせ、体外へ排出しやすくします。' },
@@ -69,7 +69,7 @@ const MACHINE_DETAILS = [
     price: '¥2,980',
     taxPrice: '¥3,278',
     detail: '肌の奥まで美容成分を浸透させる導入ケア',
-    image: '/images/超音波.png',
+    image: '/images/ultrasound.png',
     effect: ['美容成分導入', '毛穴ケア', '肌質改善'],
     effectDesc: [
       { label: '美容成分の浸透', text: '超音波振動で角質層のバリアを一時的に開き、美容液・プラセンタ・ビタミンCなどを深部まで導入します。' },

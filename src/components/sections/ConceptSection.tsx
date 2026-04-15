@@ -31,7 +31,7 @@ export default function ConceptSection() {
           <div className="fade-up order-1 lg:order-2">
             <div className="relative overflow-hidden rounded-sm img-shadow">
               <img
-                src="/images/ChatGPT_Image_2026年4月15日_16_21_07.png"
+                src="/images/concept-image.png"
                 alt="Le Cherien コンセプト"
                 className="w-full h-auto"
                 loading="lazy"
