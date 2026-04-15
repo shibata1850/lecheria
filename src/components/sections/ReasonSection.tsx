@@ -6,8 +6,8 @@ const REASONS = [
     num: '01',
     title: '上質な空間',
     description: '遠赤外線ドームも完備し、心身を温めながら施術効果を高めます。',
-    image: '/images/LINE_ALBUM_LeCherien(平野撮影)_260322_7.jpg',
-    imageAlt: 'サロン個室空間',
+    image: '/images/ChatGPT_Image_2026年4月15日_16_52_09.png',
+    imageAlt: 'サロン受付・空間',
     brighten: false,
   },
   {
