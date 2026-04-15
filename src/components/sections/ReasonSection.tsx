@@ -5,10 +5,10 @@ const REASONS = [
   {
     num: '01',
     title: '上質な空間',
-    description: '完全個室のプライベート空間で、周囲を気にせずゆったりとお過ごしいただけます。遠赤外線ドームも完備し、心身を温めながら施術効果を高めます。',
-    image: '/images/IMG_7983.JPG',
-    imageAlt: '施術ルームと美容機器',
-    brighten: true,
+    description: '遠赤外線ドームも完備し、心身を温めながら施術効果を高めます。',
+    image: '/images/LINE_ALBUM_LeCherien(平野撮影)_260322_7.jpg',
+    imageAlt: 'サロン個室空間',
+    brighten: false,
   },
   {
     num: '02',

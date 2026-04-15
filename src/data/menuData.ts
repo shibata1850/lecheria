@@ -131,7 +131,7 @@ export const MENU_CATEGORIES: MenuCategory[] = [
     nameEn: 'Hair Removal',
     nameJa: '脱毛',
     description: 'お肌への負担に配慮しながら、気になるムダ毛を丁寧にケア。レディース・メンズどちらにも対応し、部位別のご相談も承っております。',
-    image: '/images/datsuomou.jpg',
+    image: '/images/脱毛.png',
     priceFrom: '¥1,000〜',
     trialPriceFrom: '¥1,000〜',
     recommended: ['ムダ毛が気になる方', 'セルフケアの手間を省きたい方', '敏感肌でお悩みの方', 'メンズの方も歓迎'],

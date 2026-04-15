@@ -99,6 +99,34 @@ export default function BridalPage() {
             </ol>
           </div>
 
+          <div className="fade-up mb-16">
+            <SectionHeader label="CASE STUDY" title="施工事例" align="left" />
+            <p className="text-mid-gray text-xs font-sans mb-6">お客様の施術前後の変化をご紹介します。</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {[1, 2].map((n) => (
+                <div key={n} className="border border-border rounded-sm overflow-hidden">
+                  <div className="grid grid-cols-2 divide-x divide-border">
+                    <div className="relative">
+                      <div className="aspect-[3/4] bg-stone-100 flex flex-col items-center justify-center gap-2">
+                        <span className="text-xs text-mid-gray font-sans tracking-widest uppercase">Coming Soon</span>
+                      </div>
+                      <div className="absolute top-2 left-2 bg-charcoal/70 text-white text-[10px] font-sans px-2 py-0.5 tracking-wider">BEFORE</div>
+                    </div>
+                    <div className="relative">
+                      <div className="aspect-[3/4] bg-stone-100 flex flex-col items-center justify-center gap-2">
+                        <span className="text-xs text-mid-gray font-sans tracking-widest uppercase">Coming Soon</span>
+                      </div>
+                      <div className="absolute top-2 left-2 bg-gold/80 text-white text-[10px] font-sans px-2 py-0.5 tracking-wider">AFTER</div>
+                    </div>
+                  </div>
+                  <div className="px-4 py-3 bg-soft-gray border-t border-border">
+                    <p className="text-xs text-mid-gray font-sans">施術内容・コメントは準備中です</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
           <div className="fade-up">
             <SectionHeader label="FAQ" title="よくあるご質問" align="left" />
             <div className="space-y-6">
