@@ -170,7 +170,7 @@ export default function HairRemovalPage() {
             <p className="text-mid-gray text-xs font-sans mb-8">対応している施術部位をイラストでご確認いただけます。</p>
             <div className="rounded-sm overflow-hidden border border-border">
               <img
-                src="/images/ChatGPT_Image_2026年4月15日_16_51_22.png"
+                src="/images/face-parts-guide.png"
                 alt="脱毛部位ガイド"
                 className="w-full h-auto"
                 loading="lazy"

@@ -6,7 +6,7 @@ const REASONS = [
     num: '01',
     title: '上質な空間',
     description: '遠赤外線ドームも完備し、心身を温めながら施術効果を高めます。',
-    image: '/images/ChatGPT_Image_2026年4月15日_16_52_09.png',
+    image: '/images/salon-reception.png',
     imageAlt: 'サロン受付・空間',
     brighten: false,
   },
