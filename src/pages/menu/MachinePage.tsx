@@ -15,6 +15,11 @@ const MACHINE_DETAILS = [
     detail: '深部から温め、引き締め・たるみケアに',
     image: '/images/ラジオ派.png',
     effect: ['引き締め', 'たるみケア', '温活'],
+    effectDesc: [
+      { label: '深部加温', text: '真皮層・皮下組織まで熱を届け、コラーゲン産生を促進します。' },
+      { label: '引き締め・たるみ改善', text: '筋膜や結合組織にアプローチし、フェイスライン・ボディラインを引き締めます。' },
+      { label: '温活・代謝促進', text: '血流やリンパの流れを高め、むくみ・冷え性の改善をサポートします。' },
+    ],
   },
   {
     name: 'セルライトケア',
@@ -24,6 +29,11 @@ const MACHINE_DETAILS = [
     detail: 'セルライトに集中アプローチ',
     image: '/images/セルライト.png',
     effect: ['セルライト', 'むくみ', 'ボディライン'],
+    effectDesc: [
+      { label: 'セルライト分解', text: '凸凹した脂肪細胞の塊（セルライト）を振動・圧力で細かく分解します。' },
+      { label: 'むくみ解消', text: 'リンパ流れを促進し、老廃物や余分な水分の排出をサポートします。' },
+      { label: 'ボディライン整え', text: '太もも・お腹・二の腕など気になる部位のラインを集中的に整えます。' },
+    ],
   },
   {
     name: 'EMS',
@@ -33,6 +43,11 @@ const MACHINE_DETAILS = [
     detail: '筋肉へのアプローチで引き締め・くびれ形成',
     image: '/images/EMS.png',
     effect: ['引き締め', 'くびれ', '筋肉ケア'],
+    effectDesc: [
+      { label: '筋肉電気刺激', text: '微弱な電気信号で筋肉を収縮させ、運動と同様の効果を短時間で得られます。' },
+      { label: 'くびれ・ボディ形成', text: 'ウエストや腹筋など深層の筋肉にアプローチし、理想のボディラインを形成します。' },
+      { label: '基礎代謝向上', text: '筋肉量の維持・向上を促し、リバウンドしにくいボディへ導きます。' },
+    ],
   },
   {
     name: '全身カッピング',
@@ -42,6 +57,11 @@ const MACHINE_DETAILS = [
     detail: 'リンパと血流を促進するデトックスケア',
     image: '/images/カッピング.png',
     effect: ['デトックス', 'リンパ促進', '血流改善'],
+    effectDesc: [
+      { label: '老廃物デトックス', text: '陰圧（吸引）作用で皮膚・筋膜層の老廃物を浮かせ、体外へ排出しやすくします。' },
+      { label: 'リンパ促進', text: 'リンパ管に直接アプローチし、むくみや疲労物質の流れを促します。' },
+      { label: '血行改善・ほぐし', text: '滞った血流を改善し、こり・張り・疲労感を和らげます。' },
+    ],
   },
   {
     name: '超音波',
@@ -49,8 +69,13 @@ const MACHINE_DETAILS = [
     price: '¥2,980',
     taxPrice: '¥3,278',
     detail: '肌の奥まで美容成分を浸透させる導入ケア',
-    image: '/images/menu-facial-1.jpeg',
+    image: '/images/超音波.png',
     effect: ['美容成分導入', '毛穴ケア', '肌質改善'],
+    effectDesc: [
+      { label: '美容成分の浸透', text: '超音波振動で角質層のバリアを一時的に開き、美容液・プラセンタ・ビタミンCなどを深部まで導入します。' },
+      { label: '毛穴・角質ケア', text: '微細振動が毛穴の汚れや古い角質を浮かせ、肌のキメを整えます。' },
+      { label: '肌質・透明感改善', text: 'ターンオーバーを促し、乾燥・くすみ・キメ乱れを改善します。' },
+    ],
   },
 ];
 
@@ -105,22 +130,22 @@ export default function MachinePage() {
 
           <div className="fade-up mb-16">
             <SectionHeader label="MENU" title="メニュー・料金" align="left" />
-            <div className="space-y-5">
+            <div className="space-y-12">
               {MACHINE_DETAILS.map((item, i) => (
-                <div key={i} className="border border-border rounded-sm overflow-hidden flex flex-col sm:flex-row">
-                  <div className="sm:w-32 md:w-40 shrink-0">
-                    <img
-                      src={item.image}
-                      alt={item.name}
-                      className="w-full h-32 sm:h-full object-cover"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div className="flex-1 px-5 py-4 flex flex-col justify-between">
-                    <div>
-                      <div className="flex items-start justify-between gap-3 mb-2">
+                <div key={i} className="border border-border rounded-sm overflow-hidden">
+                  <div className="flex flex-col sm:flex-row">
+                    <div className="sm:w-40 md:w-48 shrink-0">
+                      <img
+                        src={item.image}
+                        alt={item.name}
+                        className="w-full h-48 sm:h-full object-contain bg-stone-50 p-3"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div className="flex-1 px-5 py-5">
+                      <div className="flex items-start justify-between gap-3 mb-3">
                         <div>
-                          <h3 className="font-serif text-base text-charcoal font-medium">{item.name}</h3>
+                          <h3 className="font-serif text-lg text-charcoal font-medium">{item.name}</h3>
                           <p className="text-xs text-mid-gray font-sans mt-0.5">{item.detail}</p>
                         </div>
                         <div className="shrink-0 text-right">
@@ -129,11 +154,40 @@ export default function MachinePage() {
                           <p className="text-xs text-mid-gray font-sans mt-0.5">{item.duration}</p>
                         </div>
                       </div>
+                      <div className="flex flex-wrap gap-1.5 mb-4">
+                        {item.effect.map((e, j) => (
+                          <span key={j} className="text-[10px] bg-soft-gray text-charcoal px-2 py-0.5 rounded-full font-sans tracking-wider">{e}</span>
+                        ))}
+                      </div>
+                      <div className="space-y-2.5 border-t border-border pt-4">
+                        {item.effectDesc.map((desc, j) => (
+                          <div key={j} className="flex gap-3">
+                            <span className="shrink-0 font-serif text-gold text-xs tracking-wider pt-0.5">0{j + 1}</span>
+                            <div>
+                              <p className="text-xs font-sans font-semibold text-charcoal mb-0.5">{desc.label}</p>
+                              <p className="text-xs font-sans text-mid-gray leading-relaxed">{desc.text}</p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                    <div className="flex flex-wrap gap-1.5 mt-3">
-                      {item.effect.map((e, j) => (
-                        <span key={j} className="text-[10px] bg-soft-gray text-charcoal px-2 py-0.5 rounded-full font-sans tracking-wider">{e}</span>
-                      ))}
+                  </div>
+
+                  <div className="border-t border-border bg-stone-50 px-5 py-4">
+                    <p className="text-[10px] text-mid-gray font-sans tracking-widest uppercase mb-3">施工事例 — Before / After</p>
+                    <div className="grid grid-cols-2 gap-3">
+                      <div className="relative">
+                        <div className="aspect-video bg-stone-100 rounded-sm flex items-center justify-center">
+                          <span className="text-[10px] text-stone-400 font-sans tracking-widest uppercase">Coming Soon</span>
+                        </div>
+                        <div className="absolute top-1.5 left-1.5 bg-charcoal/70 text-white text-[9px] font-sans px-1.5 py-0.5 tracking-wider rounded-sm">BEFORE</div>
+                      </div>
+                      <div className="relative">
+                        <div className="aspect-video bg-stone-100 rounded-sm flex items-center justify-center">
+                          <span className="text-[10px] text-stone-400 font-sans tracking-widest uppercase">Coming Soon</span>
+                        </div>
+                        <div className="absolute top-1.5 left-1.5 bg-gold/80 text-white text-[9px] font-sans px-1.5 py-0.5 tracking-wider rounded-sm">AFTER</div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -178,34 +232,6 @@ export default function MachinePage() {
                 </li>
               ))}
             </ol>
-          </div>
-
-          <div className="fade-up mb-16">
-            <SectionHeader label="CASE STUDY" title="施工事例" align="left" />
-            <p className="text-mid-gray text-xs font-sans mb-6">お客様の施術前後の変化をご紹介します。</p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {[1, 2].map((n) => (
-                <div key={n} className="border border-border rounded-sm overflow-hidden">
-                  <div className="grid grid-cols-2 divide-x divide-border">
-                    <div className="relative">
-                      <div className="aspect-[3/4] bg-stone-100 flex flex-col items-center justify-center gap-2">
-                        <span className="text-xs text-mid-gray font-sans tracking-widest uppercase">Coming Soon</span>
-                      </div>
-                      <div className="absolute top-2 left-2 bg-charcoal/70 text-white text-[10px] font-sans px-2 py-0.5 tracking-wider">BEFORE</div>
-                    </div>
-                    <div className="relative">
-                      <div className="aspect-[3/4] bg-stone-100 flex flex-col items-center justify-center gap-2">
-                        <span className="text-xs text-mid-gray font-sans tracking-widest uppercase">Coming Soon</span>
-                      </div>
-                      <div className="absolute top-2 left-2 bg-gold/80 text-white text-[10px] font-sans px-2 py-0.5 tracking-wider">AFTER</div>
-                    </div>
-                  </div>
-                  <div className="px-4 py-3 bg-soft-gray border-t border-border">
-                    <p className="text-xs text-mid-gray font-sans">施術内容・コメントは準備中です</p>
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
 
           <div className="fade-up">
