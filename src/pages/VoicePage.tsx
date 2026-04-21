@@ -47,7 +47,6 @@ const VOICE_DATA: Record<string, {
 
 export default function VoicePage() {
   const [activeTab, setActiveTab] = useState('脱毛');
-  const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
   const ref = useScrollAnimation();
 
   const voices = VOICE_DATA[activeTab] ?? [];
@@ -104,7 +103,6 @@ export default function VoicePage() {
               voices.map((voice, idx) => (
                 <article key={idx} className="border border-border bg-white overflow-hidden">
                   <div className="grid grid-cols-1 md:grid-cols-[280px_1fr]">
-                    {/* 左カラム：写真・プロフィール */}
                     <div className="bg-soft-gray flex flex-col">
                       <div className="aspect-[3/4] overflow-hidden">
                         <img
@@ -124,7 +122,6 @@ export default function VoicePage() {
                       </div>
                     </div>
 
-                    {/* 右カラム：Q&A */}
                     <div className="px-8 py-8 md:px-10 md:py-10 flex flex-col gap-7">
                       {voice.items.map((item, i) => (
                         <div key={i} className={i < voice.items.length - 1 ? 'border-b border-border pb-7' : ''}>
@@ -142,25 +139,15 @@ export default function VoicePage() {
                         </div>
                       ))}
 
-                      {/* アンケート用紙画像 */}
                       <div className="pt-2">
-                        <button
-                          onClick={() => setLightboxSrc(voice.questionnaire)}
-                          className="group relative overflow-hidden border border-border rounded-sm inline-block"
-                          aria-label="アンケート用紙を拡大表示"
-                        >
+                        <div className="border border-border rounded-sm overflow-hidden inline-block">
                           <img
                             src={voice.questionnaire}
                             alt="アンケート用紙"
-                            className="w-40 h-auto object-cover transition-transform duration-300 group-hover:scale-105"
+                            className="w-40 h-auto object-cover"
                           />
-                          <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/20 transition-all duration-300 flex items-center justify-center">
-                            <span className="opacity-0 group-hover:opacity-100 text-white text-xs font-sans tracking-widest transition-opacity duration-300 bg-charcoal/60 px-3 py-1">
-                              拡大
-                            </span>
-                          </div>
-                        </button>
-                        <p className="text-mid-gray text-xs font-sans mt-2 tracking-wide">アンケート用紙（クリックで拡大）</p>
+                        </div>
+                        <p className="text-mid-gray text-xs font-sans mt-2 tracking-wide">アンケート用紙</p>
                       </div>
                     </div>
                   </div>
@@ -191,29 +178,6 @@ export default function VoicePage() {
           </div>
         </div>
       </section>
-
-      {/* ライトボックス */}
-      {lightboxSrc && (
-        <div
-          className="fixed inset-0 z-50 bg-charcoal/80 flex items-center justify-center p-4 cursor-pointer"
-          onClick={() => setLightboxSrc(null)}
-        >
-          <div className="relative max-w-lg w-full" onClick={(e) => e.stopPropagation()}>
-            <img
-              src={lightboxSrc}
-              alt="アンケート用紙"
-              className="w-full h-auto rounded-sm shadow-2xl"
-            />
-            <button
-              onClick={() => setLightboxSrc(null)}
-              className="absolute -top-3 -right-3 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md text-charcoal text-sm font-sans hover:bg-soft-gray transition-colors"
-              aria-label="閉じる"
-            >
-              ×
-            </button>
-          </div>
-        </div>
-      )}
 
       <ContactSection />
     </>
