@@ -217,30 +217,50 @@ export default function HairRemovalPage() {
           </div>
 
           <div className="fade-up mb-16">
-            <SectionHeader label="CASE STUDY" title="施工事例" align="left" />
-            <p className="text-mid-gray text-xs font-sans mb-6">お客様の施術前後の変化をご紹介します。</p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {[1, 2].map((n) => (
-                <div key={n} className="border border-border rounded-sm overflow-hidden">
-                  <div className="grid grid-cols-2 divide-x divide-border">
-                    <div className="relative">
-                      <div className="aspect-[3/4] bg-stone-100 flex flex-col items-center justify-center gap-2">
-                        <span className="text-xs text-mid-gray font-sans tracking-widest uppercase">Coming Soon</span>
-                      </div>
-                      <div className="absolute top-2 left-2 bg-charcoal/70 text-white text-[10px] font-sans px-2 py-0.5 tracking-wider">BEFORE</div>
-                    </div>
-                    <div className="relative">
-                      <div className="aspect-[3/4] bg-stone-100 flex flex-col items-center justify-center gap-2">
-                        <span className="text-xs text-mid-gray font-sans tracking-widest uppercase">Coming Soon</span>
-                      </div>
-                      <div className="absolute top-2 left-2 bg-gold/80 text-white text-[10px] font-sans px-2 py-0.5 tracking-wider">AFTER</div>
-                    </div>
+            <SectionHeader label="VOICE" title="お客様の声" align="left" />
+            <div className="border border-border bg-white overflow-hidden">
+              <div className="grid grid-cols-1 md:grid-cols-[240px_1fr]">
+                <div className="bg-soft-gray flex flex-col">
+                  <div className="aspect-[3/4] overflow-hidden">
+                    <img
+                      src="/images/jiwo.jpg"
+                      alt="T.K様"
+                      className="w-full h-full object-cover object-top"
+                      loading="lazy"
+                    />
                   </div>
-                  <div className="px-4 py-3 bg-soft-gray border-t border-border">
-                    <p className="text-xs text-mid-gray font-sans">施術内容・コメントは準備中です</p>
+                  <div className="px-6 py-5 border-t border-border">
+                    <p className="font-serif text-xl font-light text-charcoal tracking-widest mb-1">T.K</p>
+                    <p className="text-mid-gray text-xs font-sans tracking-wider">40代 &nbsp;|&nbsp; 北上市</p>
+                    <div className="mt-3">
+                      <span className="inline-block text-[10px] font-sans tracking-widest uppercase border border-gold/50 text-gold px-3 py-1">
+                        髭脱毛
+                      </span>
+                    </div>
                   </div>
                 </div>
-              ))}
+                <div className="px-7 py-8 md:px-10 md:py-10 flex flex-col gap-6">
+                  {[
+                    { q: '脱毛するきっかけは？', a: 'ヒゲ剃りが手間であり、肌が荒れやすかったため' },
+                    { q: 'Le Cherienをお選びいただいた理由は？', a: '以前のメビウスの時に営業年数やサイトを確認し、信頼出来そうだったため' },
+                    { q: '脱毛施術の感想', a: 'ヒゲ脱毛1年くらいでほぼ目立つヒゲは生えてこなくなり今はアゴヒゲが少し生えるくらいで満足してます。' },
+                    { q: '脱毛をお考えのお客様に一言', a: '見た目はもちろん変わりますが肌のケアが楽になりヒゲ剃りの時間の短縮は大きく感じます。' },
+                  ].map((item, i, arr) => (
+                    <div key={i} className={i < arr.length - 1 ? 'border-b border-border pb-6' : ''}>
+                      <div className="flex items-start gap-3 mb-2">
+                        <span className="font-serif text-gold text-base font-light shrink-0 leading-none mt-0.5">{i + 1}.</span>
+                        <p className="text-charcoal text-sm font-sans font-medium tracking-wide leading-relaxed">{item.q}</p>
+                      </div>
+                      <p className="text-text-main text-sm font-sans leading-loose pl-5">{item.a}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div className="mt-4 text-right">
+              <a href="/voice" className="text-xs font-sans tracking-widest text-mid-gray hover:text-gold transition-colors duration-200 border-b border-mid-gray/30 hover:border-gold pb-0.5">
+                お客様の声一覧を見る
+              </a>
             </div>
           </div>
 
