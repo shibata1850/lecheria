@@ -224,14 +224,14 @@ export default function HairRemovalPage() {
                   <div className="aspect-[3/4] overflow-hidden">
                     <img
                       src="/images/jiwo.jpg"
-                      alt="T.K様"
+                      alt="S様"
                       className="w-full h-full object-cover object-top"
                       loading="lazy"
                     />
                   </div>
                   <div className="px-6 py-5 border-t border-border">
-                    <p className="font-serif text-xl font-light text-charcoal tracking-widest mb-1">T.K</p>
-                    <p className="text-mid-gray text-xs font-sans tracking-wider">40代 &nbsp;|&nbsp; 北上市</p>
+                    <p className="font-serif text-xl font-light text-charcoal tracking-widest mb-1">S</p>
+                    <p className="text-mid-gray text-xs font-sans tracking-wider">20代 &nbsp;|&nbsp; 北上市</p>
                     <div className="mt-3">
                       <span className="inline-block text-[10px] font-sans tracking-widest uppercase border border-gold/50 text-gold px-3 py-1">
                         髭脱毛
@@ -241,10 +241,10 @@ export default function HairRemovalPage() {
                 </div>
                 <div className="px-7 py-8 md:px-10 md:py-10 flex flex-col gap-6">
                   {[
-                    { q: '脱毛するきっかけは？', a: 'ヒゲ剃りが手間であり、肌が荒れやすかったため' },
-                    { q: 'Le Cherienをお選びいただいた理由は？', a: '以前のメビウスの時に営業年数やサイトを確認し、信頼出来そうだったため' },
-                    { q: '脱毛施術の感想', a: 'ヒゲ脱毛1年くらいでほぼ目立つヒゲは生えてこなくなり今はアゴヒゲが少し生えるくらいで満足してます。' },
-                    { q: '脱毛をお考えのお客様に一言', a: '見た目はもちろん変わりますが肌のケアが楽になりヒゲ剃りの時間の短縮は大きく感じます。' },
+                    { q: '脱毛するきっかけは？', a: 'ヒゲ剃りの手間などをなくしたかったから。' },
+                    { q: 'Le Cherienをお選びいただいた理由は？', a: '雰囲気がとてもよかったから。' },
+                    { q: '脱毛施術の感想', a: '脱毛箇所がすっきりし、見栄えがよくなった。' },
+                    { q: '脱毛をお考えのお客様に一言', a: 'ヒゲ剃りの手間など、すっきりさせたい方はぜひ' },
                   ].map((item, i, arr) => (
                     <div key={i} className={i < arr.length - 1 ? 'border-b border-border pb-6' : ''}>
                       <div className="flex items-start gap-3 mb-2">
