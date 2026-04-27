@@ -19,6 +19,13 @@ import BlogDetailPage from './pages/BlogDetailPage';
 import ContactPage from './pages/ContactPage';
 import PrivacyPage from './pages/PrivacyPage';
 import AboutLriagePage from './pages/AboutLriagePage';
+import NewsListPage from './pages/news/NewsListPage';
+import NewsDetailPage from './pages/news/NewsDetailPage';
+import SubmitPage from './pages/news/SubmitPage';
+import AdminLoginPage from './pages/admin/AdminLoginPage';
+import AdminLayout from './pages/admin/AdminLayout';
+import SubmissionsPage from './pages/admin/SubmissionsPage';
+import AdminNewsPage from './pages/admin/AdminNewsPage';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -33,6 +40,9 @@ function ScrollToTop() {
 function Layout() {
   const { pathname } = useLocation();
   const isHome = pathname === '/';
+  const isAdmin = pathname.startsWith('/admin');
+
+  if (isAdmin) return null;
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -51,6 +61,9 @@ function Layout() {
           <Route path="/qa" element={<QAPage />} />
           <Route path="/salon" element={<SalonPage />} />
           <Route path="/voice" element={<VoicePage />} />
+          <Route path="/news" element={<NewsListPage />} />
+          <Route path="/news/submit" element={<SubmitPage />} />
+          <Route path="/news/:slug" element={<NewsDetailPage />} />
           <Route path="/blog" element={<BlogListPage />} />
           <Route path="/blog/:slug" element={<BlogDetailPage />} />
           <Route path="/contact" element={<ContactPage />} />
@@ -64,10 +77,28 @@ function Layout() {
   );
 }
 
+function AdminRoutes() {
+  const { pathname } = useLocation();
+  const isAdmin = pathname.startsWith('/admin');
+  if (!isAdmin) return null;
+
+  return (
+    <Routes>
+      <Route path="/admin/login" element={<AdminLoginPage />} />
+      <Route path="/admin" element={<AdminLayout />}>
+        <Route index element={<SubmissionsPage />} />
+        <Route path="submissions" element={<SubmissionsPage />} />
+        <Route path="news" element={<AdminNewsPage />} />
+      </Route>
+    </Routes>
+  );
+}
+
 function App() {
   return (
     <BrowserRouter>
       <Layout />
+      <AdminRoutes />
     </BrowserRouter>
   );
 }
