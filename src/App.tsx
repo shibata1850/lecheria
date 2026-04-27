@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import MobileCTA from './components/layout/MobileCTA';
@@ -19,6 +19,13 @@ import BlogDetailPage from './pages/BlogDetailPage';
 import ContactPage from './pages/ContactPage';
 import PrivacyPage from './pages/PrivacyPage';
 import AboutLriagePage from './pages/AboutLriagePage';
+import NewsListPage from './pages/news/NewsListPage';
+import NewsDetailPage from './pages/news/NewsDetailPage';
+import SubmitPage from './pages/news/SubmitPage';
+import AdminLoginPage from './pages/admin/AdminLoginPage';
+import AdminLayout from './pages/admin/AdminLayout';
+import SubmissionsPage from './pages/admin/SubmissionsPage';
+import AdminNewsPage from './pages/admin/AdminNewsPage';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -30,14 +37,33 @@ function ScrollToTop() {
   return null;
 }
 
-function Layout() {
+function App() {
+  return (
+    <BrowserRouter>
+      <ScrollToTop />
+      <Routes>
+        {/* Admin routes — no site header/footer */}
+        <Route path="/admin/login" element={<AdminLoginPage />} />
+        <Route path="/admin" element={<AdminLayout />}>
+          <Route index element={<Navigate to="/admin/submissions" replace />} />
+          <Route path="submissions" element={<SubmissionsPage />} />
+          <Route path="news" element={<AdminNewsPage />} />
+        </Route>
+
+        {/* Public site routes — with site header/footer */}
+        <Route path="*" element={<PublicLayout />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+function PublicLayout() {
   const { pathname } = useLocation();
   const isHome = pathname === '/';
 
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <ScrollToTop />
       <main className={`flex-1 ${isHome ? '' : 'pt-16 md:pt-20'}`}>
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -51,6 +77,9 @@ function Layout() {
           <Route path="/qa" element={<QAPage />} />
           <Route path="/salon" element={<SalonPage />} />
           <Route path="/voice" element={<VoicePage />} />
+          <Route path="/news" element={<NewsListPage />} />
+          <Route path="/news/submit" element={<SubmitPage />} />
+          <Route path="/news/:slug" element={<NewsDetailPage />} />
           <Route path="/blog" element={<BlogListPage />} />
           <Route path="/blog/:slug" element={<BlogDetailPage />} />
           <Route path="/contact" element={<ContactPage />} />
@@ -61,14 +90,6 @@ function Layout() {
       <Footer />
       <MobileCTA />
     </div>
-  );
-}
-
-function App() {
-  return (
-    <BrowserRouter>
-      <Layout />
-    </BrowserRouter>
   );
 }
 
