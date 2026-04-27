@@ -11,7 +11,6 @@
     "typecheck": "tsc --noEmit -p tsconfig.app.json"
   },
   "dependencies": {
-    "@hookform/resolvers": "^5.2.2",
     "@supabase/supabase-js": "^2.57.4",
     "@types/react-router-dom": "^5.3.3",
     "@vitejs/plugin-react": "^4.3.1",
@@ -20,12 +19,9 @@
     "postcss": "^8.4.35",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-hook-form": "^7.74.0",
-    "react-markdown": "^10.1.0",
     "react-router-dom": "^7.13.1",
     "tailwindcss": "^3.4.1",
-    "vite": "^5.4.2",
-    "zod": "^4.3.6"
+    "vite": "^5.4.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.1",

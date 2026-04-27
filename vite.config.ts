@@ -38,16 +38,6 @@ export default defineConfig({
   plugins: [react(), copyPublicExcluding(['脱毛 copy'])],
   build: {
     copyPublicDir: false,
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
-          'markdown': ['react-markdown'],
-          'supabase': ['@supabase/supabase-js'],
-          'forms': ['react-hook-form', 'zod', '@hookform/resolvers'],
-        },
-      },
-    },
   },
   optimizeDeps: {
     exclude: ['lucide-react'],
