@@ -6,7 +6,21 @@ import { MENU_CATEGORIES } from '../../data/menuData';
 
 const cat = MENU_CATEGORIES.find((c) => c.id === 'machine')!;
 
-const MACHINE_DETAILS = [
+type BeforeAfterPair = { before: string | null; after: string | null };
+type MachineDetail = {
+  name: string;
+  duration: string;
+  price: string;
+  taxPrice: string;
+  detail: string;
+  image: string;
+  topImage?: string;
+  beforeAfter?: BeforeAfterPair[];
+  effect: string[];
+  effectDesc: { label: string; text: string }[];
+};
+
+const MACHINE_DETAILS: MachineDetail[] = [
   {
     name: 'ラジオ波',
     duration: '30分',
@@ -14,6 +28,11 @@ const MACHINE_DETAILS = [
     taxPrice: '¥4,378',
     detail: '深部から温め、引き締め・たるみケア・温活をサポート',
     image: '/images/radio-wave.png',
+    topImage: '/images/ChatGPT_Image_2026年5月1日_16_23_58.png',
+    beforeAfter: [
+      { before: '/images/bl005.jpg', after: null },
+      { before: null, after: '/images/bl04.png' },
+    ],
     effect: ['引き締め', 'たるみケア', '温活'],
     effectDesc: [
       { label: '深部加温', text: '真皮層・皮下組織まで熱を届け、コラーゲン産生を促進します。' },
@@ -133,6 +152,17 @@ export default function MachinePage() {
             <div className="space-y-12">
               {MACHINE_DETAILS.map((item, i) => (
                 <div key={i} className="border border-border rounded-sm overflow-hidden">
+                  {item.topImage && (
+                    <div className="w-full overflow-hidden" style={{ maxHeight: '280px' }}>
+                      <img
+                        src={item.topImage}
+                        alt={`${item.name} 施術イメージ`}
+                        className="w-full object-cover"
+                        style={{ maxHeight: '280px' }}
+                        loading="lazy"
+                      />
+                    </div>
+                  )}
                   <div className="flex flex-col sm:flex-row">
                     <div className="sm:w-40 md:w-48 shrink-0">
                       <img
@@ -174,21 +204,52 @@ export default function MachinePage() {
                   </div>
 
                   <div className="border-t border-border bg-stone-50 px-5 py-4">
-                    <p className="text-[10px] text-mid-gray font-sans tracking-widest uppercase mb-3">施術事例 — Before / After</p>
-                    <div className="grid grid-cols-2 gap-3">
-                      <div className="relative">
-                        <div className="aspect-video bg-stone-100 rounded-sm flex items-center justify-center">
-                          <span className="text-[10px] text-stone-400 font-sans tracking-widest uppercase">Coming Soon</span>
-                        </div>
-                        <div className="absolute top-1.5 left-1.5 bg-charcoal/70 text-white text-[9px] font-sans px-1.5 py-0.5 tracking-wider rounded-sm">BEFORE</div>
+                    <p className="text-[10px] text-mid-gray font-sans tracking-widest uppercase mb-3">施術例 — Before / After</p>
+                    {item.beforeAfter ? (
+                      <div className="grid grid-cols-2 gap-3">
+                        {item.beforeAfter.map((pair, pi) => (
+                          <div key={pi} className="relative">
+                            {pair.before ? (
+                              <img
+                                src={pair.before}
+                                alt="Before"
+                                className="w-full aspect-square object-cover rounded-sm"
+                                loading="lazy"
+                              />
+                            ) : pair.after ? (
+                              <img
+                                src={pair.after}
+                                alt="After"
+                                className="w-full aspect-square object-cover rounded-sm"
+                                loading="lazy"
+                              />
+                            ) : (
+                              <div className="aspect-square bg-stone-100 rounded-sm flex items-center justify-center">
+                                <span className="text-[10px] text-stone-400 font-sans tracking-widest uppercase">Coming Soon</span>
+                              </div>
+                            )}
+                            <div className={`absolute top-1.5 left-1.5 text-white text-[9px] font-sans px-1.5 py-0.5 tracking-wider rounded-sm ${pair.before ? 'bg-charcoal/70' : 'bg-gold/80'}`}>
+                              {pair.before ? 'BEFORE' : 'AFTER'}
+                            </div>
+                          </div>
+                        ))}
                       </div>
-                      <div className="relative">
-                        <div className="aspect-video bg-stone-100 rounded-sm flex items-center justify-center">
-                          <span className="text-[10px] text-stone-400 font-sans tracking-widest uppercase">Coming Soon</span>
+                    ) : (
+                      <div className="grid grid-cols-2 gap-3">
+                        <div className="relative">
+                          <div className="aspect-video bg-stone-100 rounded-sm flex items-center justify-center">
+                            <span className="text-[10px] text-stone-400 font-sans tracking-widest uppercase">Coming Soon</span>
+                          </div>
+                          <div className="absolute top-1.5 left-1.5 bg-charcoal/70 text-white text-[9px] font-sans px-1.5 py-0.5 tracking-wider rounded-sm">BEFORE</div>
                         </div>
-                        <div className="absolute top-1.5 left-1.5 bg-gold/80 text-white text-[9px] font-sans px-1.5 py-0.5 tracking-wider rounded-sm">AFTER</div>
+                        <div className="relative">
+                          <div className="aspect-video bg-stone-100 rounded-sm flex items-center justify-center">
+                            <span className="text-[10px] text-stone-400 font-sans tracking-widest uppercase">Coming Soon</span>
+                          </div>
+                          <div className="absolute top-1.5 left-1.5 bg-gold/80 text-white text-[9px] font-sans px-1.5 py-0.5 tracking-wider rounded-sm">AFTER</div>
+                        </div>
                       </div>
-                    </div>
+                    )}
                   </div>
                 </div>
               ))}
