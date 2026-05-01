@@ -164,14 +164,16 @@ export default function MachinePage() {
                     </div>
                   )}
                   <div className="flex flex-col sm:flex-row">
-                    <div className="sm:w-40 md:w-48 shrink-0">
-                      <img
-                        src={item.image}
-                        alt={item.name}
-                        className="w-full h-48 sm:h-full object-contain bg-stone-50 p-3"
-                        loading="lazy"
-                      />
-                    </div>
+                    {!item.topImage && (
+                      <div className="sm:w-40 md:w-48 shrink-0">
+                        <img
+                          src={item.image}
+                          alt={item.name}
+                          className="w-full h-48 sm:h-full object-contain bg-stone-50 p-3"
+                          loading="lazy"
+                        />
+                      </div>
+                    )}
                     <div className="flex-1 px-5 py-5">
                       <div className="flex items-start justify-between gap-3 mb-3">
                         <div>
