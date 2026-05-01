@@ -107,7 +107,7 @@ export default function HairRemovalPage() {
                     <div className="flex items-start justify-between mb-2">
                       <div>
                         <p className="text-charcoal text-sm font-sans font-medium">全身脱毛おためし</p>
-                        <p className="text-xs text-mid-gray font-sans mt-0.5">プチ〜ラージ　1か所のみ</p>
+                        <p className="text-xs text-mid-gray font-sans mt-0.5">プチ〜ラージ 1か所のみ</p>
                         <div className="flex items-center gap-2 mt-1">
                           <span className="text-[10px] text-rose-500 font-sans font-medium bg-rose-50 border border-rose-200 px-1.5 py-0.5 rounded-sm whitespace-nowrap">お試し</span>
                           <p className="text-xs text-mid-gray font-sans">¥1,000〜<span className="ml-1 text-[10px]">(税込¥1,100〜)</span></p>

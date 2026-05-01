@@ -39,17 +39,6 @@ export default function SubmitPage() {
   const bodyValue = watch('body', '');
   const titleValue = watch('title', '');
 
-  if (SUBMIT_TOKEN && token !== SUBMIT_TOKEN) {
-    return (
-      <div className="min-h-[60vh] flex items-center justify-center px-6">
-        <div className="text-center">
-          <p className="font-serif text-2xl font-light text-charcoal mb-4">ページが見つかりません</p>
-          <p className="text-mid-gray text-sm font-sans">このURLは無効です。</p>
-        </div>
-      </div>
-    );
-  }
-
   const validateImages = (files: File[]): string => {
     if (files.length > 3) return '画像は最大3枚までです';
     for (const f of files) {
@@ -78,7 +67,19 @@ export default function SubmitPage() {
     e.preventDefault();
     setIsDragging(false);
     addImages(e.dataTransfer.files);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [images]);
+
+  if (SUBMIT_TOKEN && token !== SUBMIT_TOKEN) {
+    return (
+      <div className="min-h-[60vh] flex items-center justify-center px-6">
+        <div className="text-center">
+          <p className="font-serif text-2xl font-light text-charcoal mb-4">ページが見つかりません</p>
+          <p className="text-mid-gray text-sm font-sans">このURLは無効です。</p>
+        </div>
+      </div>
+    );
+  }
 
   const onConfirm = (data: FormData) => {
     setFormSnapshot(data);
