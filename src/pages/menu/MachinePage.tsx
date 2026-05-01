@@ -12,7 +12,7 @@ const MACHINE_DETAILS = [
     duration: '30分',
     price: '¥3,980',
     taxPrice: '¥4,378',
-    detail: '深部から温め、引き締め・たるみケアに',
+    detail: '深部から温め、引き締め・たるみケア・温活をサポート',
     image: '/images/radio-wave.png',
     effect: ['引き締め', 'たるみケア', '温活'],
     effectDesc: [
@@ -26,7 +26,7 @@ const MACHINE_DETAILS = [
     duration: '30分',
     price: '¥3,980',
     taxPrice: '¥4,378',
-    detail: 'セルライトに集中アプローチ',
+    detail: '気になる部位の凹凸や引き締めをサポート',
     image: '/images/cellulite.png',
     effect: ['セルライト', 'むくみ', 'ボディライン'],
     effectDesc: [
@@ -54,7 +54,7 @@ const MACHINE_DETAILS = [
     duration: '30分',
     price: '¥3,980',
     taxPrice: '¥4,378',
-    detail: 'リンパと血流を促進するデトックスケア',
+    detail: '巡りを整え、こわばりや冷えが気になる方におすすめ',
     image: '/images/cupping.png',
     effect: ['デトックス', 'リンパ促進', '血流改善'],
     effectDesc: [
@@ -174,7 +174,7 @@ export default function MachinePage() {
                   </div>
 
                   <div className="border-t border-border bg-stone-50 px-5 py-4">
-                    <p className="text-[10px] text-mid-gray font-sans tracking-widest uppercase mb-3">施工事例 — Before / After</p>
+                    <p className="text-[10px] text-mid-gray font-sans tracking-widest uppercase mb-3">施術事例 — Before / After</p>
                     <div className="grid grid-cols-2 gap-3">
                       <div className="relative">
                         <div className="aspect-video bg-stone-100 rounded-sm flex items-center justify-center">

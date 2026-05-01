@@ -10,7 +10,7 @@ const STEPS = [
   {
     num: '02',
     title: 'カウンセリング',
-    description: '肌の状態やお悩みをていねいにお伺いします。',
+    description: '肌の状態やお悩みを丁寧にお伺いします。',
   },
   {
     num: '03',
@@ -44,8 +44,8 @@ export default function FlowSection() {
                 className="fade-up flex flex-col items-center text-center"
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
-                <div className="w-16 h-16 rounded-full bg-gold text-white flex items-center justify-center mb-6 shrink-0">
-                  <span className="font-serif text-sm tracking-widest">{step.num}</span>
+                <div className="w-16 h-16 rounded-full bg-silver/30 border border-silver/60 text-charcoal flex items-center justify-center mb-6 shrink-0">
+                  <span className="font-serif text-sm tracking-widest text-charcoal">{step.num}</span>
                 </div>
                 <h3 className="font-serif text-base text-charcoal font-light mb-3">{step.title}</h3>
                 <p className="text-mid-gray font-sans text-xs leading-relaxed">{step.description}</p>

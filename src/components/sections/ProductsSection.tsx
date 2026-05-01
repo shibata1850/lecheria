@@ -5,7 +5,7 @@ const BRANDS = [
   {
     name: 'UTP',
     url: 'https://utp.co.jp/',
-    description: '日本が誇る美容機器メーカー。先進技術を用いた高品質な施術機器をサロンに提供しています。',
+    description: 'UTPプラセンタを専門とした化粧品やサプリメントを取り入れ、外側からのケアだけでなく、内側からも美しさを支えるトータルケアをご提案します。',
   },
   {
     name: 'EXSEEDS JAPAN',

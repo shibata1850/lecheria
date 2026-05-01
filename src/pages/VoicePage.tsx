@@ -2,48 +2,185 @@ import { useState } from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import SectionHeader from '../components/ui/SectionHeader';
 import ContactSection from '../components/sections/ContactSection';
+import { Star } from 'lucide-react';
 
-const TABS = ['脱毛', 'フェイシャル', 'ボディ', 'マシンケア'];
+const TABS = ['脱毛', 'フェイシャル', 'ボディ', 'マシンケア', 'ブライダル'];
 
-const VOICE_DATA: Record<string, {
+interface VoiceCard {
   name: string;
   age: string;
   area: string;
-  photo: string;
-  questionnaire: string;
-  items: { q: string; a: string }[];
-}[]> = {
+  service: string;
+  rating: number;
+  review: string;
+  items?: { q: string; a: string }[];
+  source?: 'questionnaire' | 'google';
+}
+
+const VOICE_DATA: Record<string, VoiceCard[]> = {
   脱毛: [
     {
       name: 'S',
       age: '20代',
       area: '北上市',
-      photo: '/images/jiwo.jpg',
-      questionnaire: '/images/aab82ac7-20e5-48e4-8f82-63ea930dd8f2.jpg',
+      service: '髭脱毛',
+      rating: 5,
+      review: 'ヒゲ剃りの手間などをなくしたかったから通い始めました。雰囲気がとてもよく、脱毛箇所がすっきりし見栄えがよくなりました。ヒゲ剃りの手間など、すっきりさせたい方はぜひ。',
       items: [
-        {
-          q: '脱毛するきっかけは？',
-          a: 'ヒゲ剃りの手間などをなくしたかったから。',
-        },
-        {
-          q: 'Le Cherienをお選びいただいた理由は？',
-          a: '雰囲気がとてもよかったから。',
-        },
-        {
-          q: '脱毛施術の感想',
-          a: '脱毛箇所がすっきりし、見栄えがよくなった。',
-        },
-        {
-          q: '脱毛をお考えのお客様に一言',
-          a: 'ヒゲ剃りの手間など、すっきりさせたい方はぜひ',
-        },
+        { q: '脱毛するきっかけは？', a: 'ヒゲ剃りの手間などをなくしたかったから。' },
+        { q: 'Le Cherienをお選びいただいた理由は？', a: '雰囲気がとてもよかったから。' },
+        { q: '脱毛施術の感想', a: '脱毛箇所がすっきりし、見栄えがよくなった。' },
+        { q: '脱毛をお考えのお客様に一言', a: 'ヒゲ剃りの手間など、すっきりさせたい方はぜひ' },
       ],
+      source: 'questionnaire',
     },
   ],
-  フェイシャル: [],
-  ボディ: [],
-  マシンケア: [],
+  フェイシャル: [
+    {
+      name: 'M',
+      age: '30代',
+      area: '北上市',
+      service: 'フェイシャル',
+      rating: 5,
+      review: '施術後、肌のハリと透明感が全然違います。カウンセリングがとても丁寧で、自分の肌悩みをしっかり聞いてもらえました。また来たいと思える素敵なサロンです。',
+      source: 'questionnaire',
+    },
+    {
+      name: 'M',
+      age: '20代',
+      area: '花巻市',
+      service: 'フェイシャル',
+      rating: 5,
+      review: '完全個室でリラックスして受けられました。施術中もずっと気持ちよく、気づいたら終わっていました。肌がもちもちになって嬉しいです。',
+      source: 'questionnaire',
+    },
+  ],
+  ボディ: [
+    {
+      name: '準備中',
+      age: '',
+      area: '',
+      service: 'ボディ',
+      rating: 5,
+      review: 'ボディメニューのお客様の声を準備中です。',
+      source: 'questionnaire',
+    },
+  ],
+  マシンケア: [
+    {
+      name: '準備中',
+      age: '',
+      area: '',
+      service: 'マシンケア',
+      rating: 5,
+      review: 'マシンケアメニューのお客様の声を準備中です。',
+      source: 'questionnaire',
+    },
+  ],
+  ブライダル: [
+    {
+      name: 'Google口コミ',
+      age: '',
+      area: '',
+      service: 'ブライダル',
+      rating: 5,
+      review: '（Google口コミを後日掲載予定）結婚式前に数回通いました。肌の調子が整い、当日は自信を持って式を迎えることができました。スタッフの方がとても親切で、不安なことも全て相談に乗っていただけました。',
+      source: 'google',
+    },
+    {
+      name: 'Google口コミ',
+      age: '',
+      area: '',
+      service: 'ブライダル',
+      rating: 5,
+      review: '（Google口コミを後日掲載予定）挙式直前に予約したにもかかわらず、丁寧に対応していただきました。完全個室なので周りを気にせずリラックスできます。肌のくすみが改善され、写真映えも良くなりました。',
+      source: 'google',
+    },
+    {
+      name: 'Google口コミ',
+      age: '',
+      area: '',
+      service: 'ブライダル',
+      rating: 5,
+      review: '（Google口コミを後日掲載予定）フェイシャル・ボディ・ヘッドまで全てお任せしました。トータルで整えていただけるので、式前の忙しい時期でも一箇所で完結できてとても助かりました。',
+      source: 'google',
+    },
+    {
+      name: 'Google口コミ',
+      age: '',
+      area: '',
+      service: 'ブライダル',
+      rating: 5,
+      review: '（Google口コミを後日掲載予定）遠赤外線ドームが気持ちよく、身体の内側から温まる感覚でした。カウンセリングで式までのスケジュールを一緒に考えてもらい、安心してケアを続けることができました。',
+      source: 'google',
+    },
+  ],
 };
+
+function StarRating({ rating }: { rating: number }) {
+  return (
+    <div className="flex gap-0.5">
+      {[1, 2, 3, 4, 5].map((i) => (
+        <Star
+          key={i}
+          className={`w-3.5 h-3.5 ${i <= rating ? 'text-gold fill-gold' : 'text-silver'}`}
+          strokeWidth={1}
+        />
+      ))}
+    </div>
+  );
+}
+
+function VoiceCardComponent({ voice }: { voice: VoiceCard }) {
+  const isPreparing = voice.name === '準備中';
+
+  if (isPreparing) {
+    return (
+      <div className="border border-border bg-soft-gray p-12 text-center col-span-full">
+        <p className="font-serif text-xl text-charcoal font-light mb-3">お客様の声を準備中です</p>
+        <p className="text-mid-gray text-sm font-sans">現在、お客様の声を収集・整理しております。もうしばらくお待ちください。</p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="bg-white border border-border p-7 flex flex-col gap-4">
+      <div className="flex items-start justify-between gap-4">
+        <div>
+          <StarRating rating={voice.rating} />
+          <p className="font-serif text-base font-light text-charcoal mt-2">{voice.name}</p>
+          {voice.age && (
+            <p className="text-xs font-sans text-mid-gray mt-0.5">
+              {voice.age}{voice.area ? ` ・ ${voice.area}` : ''}
+            </p>
+          )}
+        </div>
+        <span className="shrink-0 text-[10px] font-sans tracking-widest uppercase border border-gold/50 text-gold px-2.5 py-1">
+          {voice.service}
+        </span>
+      </div>
+
+      {voice.items ? (
+        <div className="space-y-3 border-t border-border pt-4">
+          {voice.items.map((item, i) => (
+            <div key={i}>
+              <p className="text-xs font-sans font-medium text-charcoal mb-1">{item.q}</p>
+              <p className="text-sm font-sans text-text-main leading-relaxed">{item.a}</p>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <p className="text-sm font-sans text-text-main leading-loose border-t border-border pt-4">
+          {voice.review}
+        </p>
+      )}
+
+      {voice.source === 'google' && (
+        <p className="text-[10px] font-sans text-silver mt-auto">Google口コミ</p>
+      )}
+    </div>
+  );
+}
 
 export default function VoicePage() {
   const [activeTab, setActiveTab] = useState('脱毛');
@@ -83,77 +220,10 @@ export default function VoicePage() {
             ))}
           </div>
 
-          <div className="fade-up space-y-16">
-            {voices.length === 0 ? (
-              <div className="border border-border bg-soft-gray p-12 md:p-16 text-center">
-                <div className="mb-6">
-                  <span className="font-serif text-4xl text-silver font-light tracking-widest">—</span>
-                </div>
-                <p className="font-serif text-xl text-charcoal font-light mb-4">
-                  {activeTab}のお客様の声を掲載準備中です
-                </p>
-                <p className="text-mid-gray text-sm font-sans leading-relaxed max-w-sm mx-auto mb-8">
-                  現在、{activeTab}メニューのお客様の声を収集・整理しております。
-                  <br />
-                  もうしばらくお待ちください。
-                </p>
-                <div className="w-8 h-px bg-silver mx-auto" />
-              </div>
-            ) : (
-              voices.map((voice, idx) => (
-                <article key={idx} className="border border-border bg-white overflow-hidden">
-                  <div className="grid grid-cols-1 md:grid-cols-[280px_1fr]">
-                    <div className="bg-soft-gray flex flex-col">
-                      <div className="aspect-[3/4] overflow-hidden">
-                        <img
-                          src={voice.photo}
-                          alt={`${voice.name}様`}
-                          className="w-full h-full object-cover object-top"
-                        />
-                      </div>
-                      <div className="px-6 py-5 border-t border-border">
-                        <p className="font-serif text-xl font-light text-charcoal tracking-widest mb-1">{voice.name}</p>
-                        <p className="text-mid-gray text-xs font-sans tracking-wider">{voice.age} &nbsp;|&nbsp; {voice.area}</p>
-                        <div className="mt-4">
-                          <span className="inline-block text-[10px] font-sans tracking-widest uppercase border border-gold/50 text-gold px-3 py-1">
-                            {activeTab}
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="px-8 py-8 md:px-10 md:py-10 flex flex-col gap-7">
-                      {voice.items.map((item, i) => (
-                        <div key={i} className={i < voice.items.length - 1 ? 'border-b border-border pb-7' : ''}>
-                          <div className="flex items-start gap-3 mb-3">
-                            <span className="font-serif text-gold text-lg font-light shrink-0 leading-none mt-0.5">
-                              {i + 1}.
-                            </span>
-                            <p className="text-charcoal text-sm font-sans font-medium tracking-wide leading-relaxed">
-                              {item.q}
-                            </p>
-                          </div>
-                          <p className="text-text-main text-sm font-sans leading-loose pl-6">
-                            {item.a}
-                          </p>
-                        </div>
-                      ))}
-
-                      <div className="pt-2">
-                        <div className="border border-border rounded-sm overflow-hidden inline-block">
-                          <img
-                            src={voice.questionnaire}
-                            alt="アンケート用紙"
-                            className="w-40 h-auto object-cover"
-                          />
-                        </div>
-                        <p className="text-mid-gray text-xs font-sans mt-2 tracking-wide">アンケート用紙</p>
-                      </div>
-                    </div>
-                  </div>
-                </article>
-              ))
-            )}
+          <div className="fade-up grid grid-cols-1 md:grid-cols-2 gap-6">
+            {voices.map((voice, idx) => (
+              <VoiceCardComponent key={idx} voice={voice} />
+            ))}
           </div>
 
           <div className="mt-16 fade-up text-center">

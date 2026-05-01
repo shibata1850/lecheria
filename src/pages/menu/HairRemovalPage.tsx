@@ -25,9 +25,9 @@ const PARTS_SMALL = ['脇', 'うなじ', '手足の甲', '指', 'ヘソ下'];
 const PARTS_LARGE = ['ヒジ上', 'ヒジ下', '背中上', '背中下', 'ヒザ上', 'ヒザ下', 'お腹', '胸', '腰'];
 
 const MENS_FACIAL_MENU = [
-  'イオン導入',
-  '超音波フェイシャル',
-  '炭酸パック',
+  { name: 'イオン導入', desc: '角質ケア、ニキビ、毛穴' },
+  { name: '超音波', desc: '乾燥、たるみ、凝り' },
+  { name: '炭酸パック', desc: 'シミ、美白、脱毛後の鎮静化' },
 ];
 
 export default function HairRemovalPage() {
@@ -79,7 +79,7 @@ export default function HairRemovalPage() {
                 <div className="divide-y divide-border">
                   {[
                     { name: '顔脱毛（レディース）', price: '¥1,980' },
-                    { name: '眉毛デザイン脱毛', price: '¥1,980' },
+                    { name: '眉毛デザイン脱毛', price: '¥3,000' },
                     { name: 'VIO脱毛', price: '¥9,800' },
                   ].map((item, i) => (
                     <div key={i} className="px-5 py-3 flex items-center justify-between">
@@ -106,7 +106,8 @@ export default function HairRemovalPage() {
                   <div className="px-5 py-4">
                     <div className="flex items-start justify-between mb-2">
                       <div>
-                        <p className="text-charcoal text-sm font-sans font-medium">プチパーツ（1箇所）</p>
+                        <p className="text-charcoal text-sm font-sans font-medium">全身脱毛おためし</p>
+                        <p className="text-xs text-mid-gray font-sans mt-0.5">プチ〜ラージ　1か所のみ</p>
                         <div className="flex items-center gap-2 mt-1">
                           <span className="text-[10px] text-rose-500 font-sans font-medium bg-rose-50 border border-rose-200 px-1.5 py-0.5 rounded-sm whitespace-nowrap">お試し</span>
                           <p className="text-xs text-mid-gray font-sans">¥1,000〜<span className="ml-1 text-[10px]">(税込¥1,100〜)</span></p>
@@ -114,23 +115,7 @@ export default function HairRemovalPage() {
                       </div>
                     </div>
                     <div className="flex flex-wrap gap-1.5 mt-2">
-                      {PARTS_SMALL.map((p, i) => (
-                        <span key={i} className="text-xs bg-stone-100 text-charcoal px-2 py-0.5 rounded-full font-sans">{p}</span>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="px-5 py-4">
-                    <div className="flex items-start justify-between mb-2">
-                      <div>
-                        <p className="text-charcoal text-sm font-sans font-medium">ラージパーツ（1箇所）</p>
-                        <div className="flex items-center gap-2 mt-1">
-                          <span className="text-[10px] text-rose-500 font-sans font-medium bg-rose-50 border border-rose-200 px-1.5 py-0.5 rounded-sm whitespace-nowrap">お試し</span>
-                          <p className="text-xs text-mid-gray font-sans">¥3,000〜<span className="ml-1 text-[10px]">(税込¥3,300〜)</span></p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="flex flex-wrap gap-1.5 mt-2">
-                      {PARTS_LARGE.map((p, i) => (
+                      {[...PARTS_SMALL, ...PARTS_LARGE].map((p, i) => (
                         <span key={i} className="text-xs bg-stone-100 text-charcoal px-2 py-0.5 rounded-full font-sans">{p}</span>
                       ))}
                     </div>
@@ -149,12 +134,15 @@ export default function HairRemovalPage() {
                 </div>
               </div>
               <div className="px-5 py-4">
-                <p className="text-xs text-mid-gray font-sans mb-3">セット内容の美顔メニュー（下記よりご選択）</p>
+                <p className="text-xs text-mid-gray font-sans mb-3">セット内容の美顔メニュー</p>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                   {MENS_FACIAL_MENU.map((menu, i) => (
-                    <div key={i} className="bg-white border border-border rounded-sm px-4 py-3 flex items-center gap-2">
-                      <span className="font-serif text-gold text-xs tracking-wider shrink-0">0{i + 1}</span>
-                      <span className="text-xs text-charcoal font-sans">{menu}</span>
+                    <div key={i} className="bg-white border border-border rounded-sm px-4 py-3">
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className="font-serif text-gold text-xs tracking-wider shrink-0">0{i + 1}</span>
+                        <span className="text-xs text-charcoal font-sans font-medium">{menu.name}</span>
+                      </div>
+                      <p className="text-[10px] text-mid-gray font-sans pl-5">{menu.desc}</p>
                     </div>
                   ))}
                 </div>
