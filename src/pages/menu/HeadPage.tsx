@@ -156,7 +156,7 @@ export default function HeadPage() {
           </div>
 
           <div className="fade-up mb-16">
-            <SectionHeader label="CASE STUDY" title="施工事例" align="left" />
+            <SectionHeader label="CASE STUDY" title="施術例" align="left" />
             <p className="text-mid-gray text-xs font-sans mb-6">お客様の施術前後の変化をご紹介します。</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {[1, 2].map((n) => (
