@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import emailjs from '@emailjs/browser';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import SectionHeader from '../components/ui/SectionHeader';
 import { SALON } from '../data/salonData';
@@ -96,23 +95,27 @@ export default function ContactPage() {
     setError(null);
 
     try {
-      // EmailJS template variables — must match your template exactly:
-      // {{from_name}}, {{furigana}}, {{from_email}}, {{tel}},
-      // {{subject_label}}, {{menu_label}}, {{message}}
-      await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        {
-          from_name: form.name,
-          furigana: form.furigana,
-          from_email: form.email,
-          tel: form.tel || '未入力',
-          subject_label: SUBJECT_LABELS[form.subject] || '未選択',
-          menu_label: MENU_LABELS[form.menu] || '未選択',
-          message: form.message || 'なし',
-        },
-        { publicKey: EMAILJS_PUBLIC_KEY }
-      );
+      const res = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          service_id: EMAILJS_SERVICE_ID,
+          template_id: EMAILJS_TEMPLATE_ID,
+          user_id: EMAILJS_PUBLIC_KEY,
+          template_params: {
+            from_name: form.name,
+            furigana: form.furigana,
+            from_email: form.email,
+            tel: form.tel || '未入力',
+            subject_label: SUBJECT_LABELS[form.subject] || '未選択',
+            menu_label: MENU_LABELS[form.menu] || '未選択',
+            message: form.message || 'なし',
+          },
+        }),
+      });
+      if (!res.ok) {
+        throw new Error('EmailJS API error');
+      }
 
       setSubmitted(true);
     } catch (err) {
